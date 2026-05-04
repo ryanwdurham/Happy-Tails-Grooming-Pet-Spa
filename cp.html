@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cascade Valley Painting | Professional House Painting – Pacific Northwest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --forest: #2F5D50;
+    --forest-light: #3d7a68;
+    --forest-dark: #1e3d35;
+    --navy: #1E3A5F;
+    --navy-light: #254b7a;
+    --gray-mist: #D1D5DB;
+    --gray-light: #f4f5f6;
+    --gray-mid: #9ca3af;
+    --wood: #8B5E3C;
+    --white: #ffffff;
+    --off-white: #fafaf8;
+    --text-dark: #1a1f1e;
+    --text-mid: #4b5563;
+    --accent: #e8914a;
+    --accent-hover: #d4793a;
+    --shadow: 0 4px 24px rgba(31,58,95,0.10);
+    --shadow-lg: 0 12px 48px rgba(31,58,95,0.18);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text-dark); background: var(--off-white); overflow-x: hidden; }
+
+  /* ── NAV ───────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(22,42,70,0.97);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 2px 32px rgba(0,0,0,0.3); }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 2.5rem;
+    height: 68px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700;
+    color: var(--white); text-decoration: none; letter-spacing: 0.01em; white-space: nowrap;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; align-items: center; }
+  .nav-links a {
+    color: rgba(255,255,255,0.78); text-decoration: none;
+    font-size: 0.83rem; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; transition: color 0.2s; white-space: nowrap;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--accent); color: var(--white) !important;
+    padding: 0.55rem 1.3rem; border-radius: 3px;
+    font-weight: 600 !important; transition: background 0.2s, transform 0.15s !important;
+    box-shadow: 0 2px 12px rgba(232,145,74,0.35);
+  }
+  .nav-cta:hover { background: var(--accent-hover) !important; transform: translateY(-1px); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; transition: 0.3s; }
+  .mobile-menu {
+    display: none; flex-direction: column;
+    background: #162a46; padding: 0.5rem 2rem 1.5rem; gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-menu.active { display: flex; }
+  .mobile-menu a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    padding: 0.85rem 0; font-size: 1rem; font-weight: 500;
+    border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s;
+  }
+  .mobile-menu a:last-child { border: none; color: var(--accent); font-weight: 600; }
+  .mobile-menu a:hover { color: var(--accent); }
+
+  /* ── HERO ──────────────────────────────────── */
+  #home {
+    min-height: 100vh;
+    background: linear-gradient(150deg, #162a46 0%, var(--navy) 45%, var(--forest-dark) 100%);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center;
+    padding: 130px 2rem 80px; position: relative; overflow: hidden;
+  }
+  #home::before {
+    content: '';  position: absolute; inset: 0; pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M50 50v-6h-2v6h-6v2h6v6h2v-6h6v-2h-6zm0-40V4h-2v6h-6v2h6v6h2v-6h6V4h-6zM10 50v-6H8v6H2v2h6v6h2v-6h6v-2h-6zM10 10V4H8v6H2v2h6v6h2v-6h6V4h-6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  /* Diagonal light streak */
+  #home::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 70% 30%, rgba(232,145,74,0.07) 0%, transparent 60%);
+  }
+  .hero-logo-wrap {
+    width: 100%; display: flex; justify-content: center;
+    align-items: center; margin: 0 auto 0.5rem; position: relative; z-index: 2;
+    animation: fadeUp 0.9s ease both;
+  }
+  .hero-logo { width: 100%; max-width: 440px; height: auto; filter: drop-shadow(0 8px 32px rgba(0,0,0,0.4));   margin-top: -60px;
+  margin-bottom: -60px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 100px; padding: 0.4rem 1.1rem;
+    font-size: 0.78rem; color: rgba(255,255,255,0.82);
+    letter-spacing: 0.09em; text-transform: uppercase; font-weight: 500;
+    margin-bottom: 1.5rem; position: relative; z-index: 2;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero-badge::before { content: '●'; color: #6ee7b7; font-size: 0.55rem; }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.2rem);
+    font-weight: 900; color: var(--white); line-height: 1.06;
+    margin-bottom: 1.25rem; position: relative; z-index: 2;
+    animation: fadeUp 0.9s 0.15s ease both;
+  }
+  .hero-title em { font-style: italic; color: var(--accent); }
+  .hero-sub {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: rgba(255,255,255,0.7); max-width: 580px;
+    margin: 0 auto 2.5rem; line-height: 1.8;
+    position: relative; z-index: 2;
+    animation: fadeUp 0.9s 0.25s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    position: relative; z-index: 2;
+    animation: fadeUp 0.9s 0.35s ease both;
+  }
+  .hero-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    margin: 3rem auto; position: relative; z-index: 2;
+  }
+  .hero-stats {
+    display: flex; gap: 0; justify-content: center;
+    position: relative; z-index: 2; flex-wrap: wrap;
+    animation: fadeUp 0.9s 0.45s ease both;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; overflow: hidden;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(8px); max-width: 700px; width: 100%;
+  }
+  .stat {
+    text-align: center; padding: 1.5rem 2rem; flex: 1; min-width: 140px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif; font-size: 2.2rem;
+    font-weight: 900; color: var(--accent); display: block; line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem; color: rgba(255,255,255,0.55);
+    text-transform: uppercase; letter-spacing: 0.09em; margin-top: 0.35rem; display: block;
+  }
+
+  /* ── SHARED ─────────────────────────────────── */
+  section { scroll-margin-top: 68px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 6rem 2.5rem; }
+  .section-inner.wide { max-width: 1280px; }
+  .section-label {
+    font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--forest); font-weight: 700; margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::before { content: ''; display: block; width: 2.5rem; height: 2px; background: var(--accent); border-radius: 1px; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.9rem);
+    font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 1rem;
+  }
+  .section-desc {
+    font-size: 1.05rem; color: var(--text-mid);
+    max-width: 640px; line-height: 1.8; margin-bottom: 3rem;
+  }
+  .btn-primary {
+    background: var(--accent); color: var(--white);
+    padding: 0.9rem 2rem; border-radius: 3px;
+    font-weight: 700; font-size: 0.95rem; text-decoration: none; border: none;
+    cursor: pointer; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    box-shadow: 0 4px 20px rgba(232,145,74,0.38); letter-spacing: 0.02em;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,145,74,0.5); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    padding: 0.9rem 2rem; border-radius: 3px; font-weight: 600;
+    font-size: 0.95rem; text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.35);
+    cursor: pointer; transition: border-color 0.2s, background 0.2s;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .btn-secondary:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+  /* ── TRUST BAR ──────────────────────────────── */
+  #trustbar {
+    background: var(--forest);
+    padding: 0;
+  }
+  .trustbar-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: stretch; justify-content: center;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 1rem 2rem; color: rgba(255,255,255,0.9);
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .trust-item:last-child { border-right: none; }
+  .trust-item .ti { font-size: 1rem; }
+
+  /* ── ABOUT ──────────────────────────────────── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 5fr 6fr;
+    gap: 5rem; align-items: center;
+  }
+  .about-img-wrap { position: relative; }
+  .about-img-placeholder {
+    width: 100%; aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+    border-radius: 6px; overflow: hidden; position: relative;
+  }
+  .about-img-placeholder img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+  .about-accent-box {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    background: var(--accent); color: var(--white);
+    border-radius: 6px; padding: 1.25rem 1.5rem;
+    text-align: center; box-shadow: var(--shadow-lg); z-index: 2;
+  }
+  .about-accent-box strong {
+    display: block; font-family: 'Playfair Display', serif;
+    font-size: 2.6rem; font-weight: 900; line-height: 1;
+  }
+  .about-accent-box span { font-size: 0.8rem; opacity: 0.9; }
+  /* Decorative corner element */
+  .about-img-wrap::before {
+    content: ''; position: absolute; top: -1rem; left: -1rem;
+    width: 80px; height: 80px;
+    border-top: 3px solid var(--accent); border-left: 3px solid var(--accent);
+    border-radius: 2px; z-index: 0;
+  }
+  .about-text h2 { margin-bottom: 1.25rem; }
+  .about-lead {
+    font-size: 1.08rem; color: var(--text-mid); line-height: 1.82;
+    margin-bottom: 1rem;
+  }
+  .about-quote {
+    border-left: 3px solid var(--accent);
+    padding: 0.75rem 1.25rem; margin: 1.5rem 0;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.08rem; color: var(--navy); line-height: 1.6;
+    background: #f8fbf9; border-radius: 0 4px 4px 0;
+  }
+  .about-points { list-style: none; margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.9rem; }
+  .about-points li {
+    display: flex; align-items: flex-start; gap: 0.85rem;
+    font-size: 0.96rem; color: var(--text-mid); line-height: 1.6;
+  }
+  .about-points li .chk {
+    flex-shrink: 0; width: 22px; height: 22px;
+    background: var(--forest); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 0.65rem; margin-top: 0.15rem;
+  }
+  .about-cta { margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-forest {
+    background: var(--forest); color: var(--white);
+    padding: 0.85rem 1.75rem; border-radius: 3px;
+    font-weight: 700; font-size: 0.95rem; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    box-shadow: 0 4px 16px rgba(47,93,80,0.3);
+    transition: background 0.2s, transform 0.15s; font-family: 'DM Sans', sans-serif;
+  }
+  .btn-forest:hover { background: var(--forest-dark); transform: translateY(-2px); }
+
+  /* ── SERVICES ───────────────────────────────── */
+  #services { background: var(--off-white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+  }
+  .service-card {
+    background: var(--white); border: 1px solid #e5e9ee;
+    border-radius: 6px; overflow: hidden;
+    transition: box-shadow 0.28s, transform 0.28s;
+    display: flex; flex-direction: column;
+  }
+  .service-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-5px); }
+  .service-card-img {
+    width: 100%; height: 190px; object-fit: cover; display: block;
+    transition: transform 0.4s;
+  }
+  .service-card:hover .service-card-img { transform: scale(1.04); }
+  .service-card-img-wrap { overflow: hidden; position: relative; }
+  .service-card-img-wrap::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(30,58,95,0.35) 100%);
+  }
+  .service-card-body { padding: 1.5rem 1.5rem 1.75rem; flex: 1; display: flex; flex-direction: column; }
+  .service-icon {
+    width: 44px; height: 44px; background: #eef7f3; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem; margin-bottom: 1rem;
+  }
+  .service-card h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.12rem;
+    font-weight: 700; color: var(--navy); margin-bottom: 0.6rem;
+  }
+  .service-card p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; flex: 1; }
+
+  /* ── WHY CHOOSE US ──────────────────────────── */
+  #why {
+    background: linear-gradient(160deg, #162a46 0%, var(--navy) 60%, #1e3d35 100%);
+    position: relative; overflow: hidden;
+  }
+  #why::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 80% 20%, rgba(232,145,74,0.08) 0%, transparent 55%);
+  }
+  #why .section-label { color: rgba(255,255,255,0.45); }
+  #why .section-label::before { background: var(--accent); }
+  #why .section-title { color: var(--white); }
+  #why .section-desc { color: rgba(255,255,255,0.6); }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 6px; padding: 2rem 1.75rem;
+    transition: background 0.25s, border-color 0.25s, transform 0.25s;
+    position: relative;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.18); transform: translateY(-3px); }
+  .why-card .icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+  .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.6rem; }
+  .why-card p { font-size: 0.875rem; color: rgba(255,255,255,0.58); line-height: 1.7; }
+
+  /* ── PROCESS ────────────────────────────────── */
+  #process { background: var(--white); }
+  .process-wrap {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; position: relative; margin-top: 1rem;
+  }
+  .process-wrap::before {
+    content: ''; position: absolute;
+    top: 26px; left: calc(12.5% + 8px); right: calc(12.5% + 8px); height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--forest));
+    z-index: 0;
+  }
+  .process-step { padding: 0 1.5rem 2rem; text-align: center; position: relative; z-index: 1; }
+  .step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--white); border: 2px solid var(--accent);
+    color: var(--navy); font-family: 'Playfair Display', serif;
+    font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem;
+    box-shadow: 0 4px 16px rgba(232,145,74,0.25);
+  }
+  .process-step h3 { font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; font-size: 1rem; }
+  .process-step p { font-size: 0.875rem; color: var(--text-mid); line-height: 1.65; }
+
+  /* ── GALLERY ────────────────────────────────── */
+  #gallery { background: var(--off-white); }
+  .gallery-section-title {
+    font-family: 'Playfair Display', serif; font-size: 1.4rem;
+    font-weight: 700; color: var(--navy); margin: 2.5rem 0 1rem;
+  }
+  .gallery-section-title:first-of-type { margin-top: 0; }
+  .gallery-hint {
+    font-size: 0.85rem; color: var(--gray-mid); margin-bottom: 1.25rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 1rem;
+  }
+  .gallery-grid-3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+  }
+  .gallery-item {
+    position: relative; overflow: hidden; border-radius: 6px;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--forest) 0%, var(--navy) 100%);
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    transition: box-shadow 0.25s;
+  }
+  .gallery-item:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+  .gallery-item::after {
+    content: attr(data-label);
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(22,42,70,0.75) 0%, transparent 55%);
+    color: var(--white); display: flex; align-items: flex-end;
+    padding: 1rem 1.1rem; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .gallery-item:hover::after { opacity: 1; }
+  /* Click indicator */
+  .gallery-item.clickable::before {
+    content: '👆 Click to reveal';
+    position: absolute; top: 0.75rem; right: 0.75rem;
+    background: rgba(22,42,70,0.75); color: white;
+    font-size: 0.7rem; padding: 0.3rem 0.6rem; border-radius: 100px;
+    font-weight: 600; letter-spacing: 0.04em; z-index: 2;
+    transition: opacity 0.3s;
+  }
+  .gallery-item.clickable[data-showing="after"]::before { content: '👆 Click to reveal original'; }
+
+  /* ── TESTIMONIALS ───────────────────────────── */
+  #reviews { background: var(--white); }
+  .reviews-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  }
+  .review-card {
+    background: var(--off-white); border: 1px solid #e5e9ee;
+    border-radius: 6px; padding: 1.75rem 1.75rem 1.5rem;
+    position: relative; transition: box-shadow 0.25s, transform 0.25s;
+    display: flex; flex-direction: column;
+  }
+  .review-card:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+  .review-card::before {
+    content: '\201C'; position: absolute; top: 0.75rem; right: 1.25rem;
+    font-family: 'Playfair Display', serif; font-size: 5rem;
+    color: var(--forest); opacity: 0.1; line-height: 1; pointer-events: none;
+  }
+  .stars { color: #f59e0b; margin-bottom: 0.75rem; font-size: 0.95rem; letter-spacing: 0.05em; }
+  .review-text {
+    font-size: 0.93rem; color: var(--text-mid);
+    line-height: 1.75; margin-bottom: 1.25rem; font-style: italic; flex: 1;
+  }
+  .reviewer-wrap { display: flex; align-items: center; gap: 0.75rem; margin-top: auto; }
+  .reviewer-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--navy); color: white;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+  }
+  .reviewer { font-weight: 700; color: var(--navy); font-size: 0.88rem; }
+  .reviewer-loc { font-size: 0.78rem; color: var(--gray-mid); margin-top: 0.1rem; }
+
+  /* ── PASSION BANNER ─────────────────────────── */
+  #passion {
+    background: var(--forest);
+    padding: 0;
+  }
+  .passion-inner {
+    max-width: 1200px; margin: 0 auto; padding: 4.5rem 2.5rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  }
+  .passion-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.14em; color: rgba(255,255,255,0.55); font-weight: 700; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.6rem; }
+  .passion-label::before { content: ''; display: block; width: 2.5rem; height: 2px; background: var(--accent); border-radius: 1px; }
+  .passion-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 1.25rem; }
+  .passion-text { font-size: 1rem; color: rgba(255,255,255,0.72); line-height: 1.85; }
+  .passion-text + .passion-text { margin-top: 1rem; }
+  .passion-quote {
+    background: rgba(255,255,255,0.08); border-left: 3px solid var(--accent);
+    padding: 1.25rem 1.5rem; border-radius: 0 6px 6px 0;
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.1rem; color: var(--white); line-height: 1.6;
+  }
+  .passion-stats {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem;
+  }
+  .passion-stat {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px; padding: 1.25rem; text-align: center;
+  }
+  .passion-stat strong {
+    display: block; font-family: 'Playfair Display', serif;
+    font-size: 2rem; font-weight: 900; color: var(--accent); line-height: 1;
+  }
+  .passion-stat span { font-size: 0.78rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 0.3rem; display: block; }
+
+  /* ── FAQ ────────────────────────────────────── */
+  #faq { background: var(--off-white); }
+  .faq-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 5rem; align-items: flex-start; }
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid #dde1e7; }
+  .faq-item:first-child { border-top: 1px solid #dde1e7; }
+  .faq-question {
+    width: 100%; background: none; border: none; padding: 1.25rem 0;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; text-align: left; font-size: 0.97rem; font-weight: 600;
+    color: var(--navy); font-family: 'DM Sans', sans-serif;
+    gap: 1rem; transition: color 0.2s;
+  }
+  .faq-question:hover { color: var(--forest); }
+  .faq-chevron {
+    flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: var(--forest); color: white; display: flex;
+    align-items: center; justify-content: center; font-size: 0.7rem;
+    transition: transform 0.3s, background 0.2s;
+  }
+  .faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--accent); }
+  .faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+  .faq-answer-inner { font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; padding-bottom: 1.25rem; }
+  /* FAQ sidebar */
+  .faq-sidebar {
+    background: var(--navy); border-radius: 8px; padding: 2rem;
+    color: white; position: sticky; top: 90px;
+  }
+  .faq-sidebar h3 {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
+    margin-bottom: 0.75rem; color: var(--white);
+  }
+  .faq-sidebar p { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.7; margin-bottom: 1.5rem; }
+  .faq-sidebar .sidebar-phone {
+    font-size: 1.3rem; font-weight: 700; color: var(--accent);
+    text-decoration: none; display: block; margin-bottom: 1rem; letter-spacing: -0.02em;
+  }
+  .faq-sidebar .sidebar-phone:hover { color: white; }
+
+  /* ── CONTACT ────────────────────────────────── */
+  #contact {
+    background: linear-gradient(150deg, var(--forest-dark) 0%, var(--navy) 100%);
+    position: relative; overflow: hidden;
+  }
+  #contact::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(ellipse at 10% 80%, rgba(47,93,80,0.3) 0%, transparent 55%);
+  }
+  #contact .section-label { color: rgba(255,255,255,0.45); }
+  #contact .section-label::before { background: var(--accent); }
+  #contact .section-title { color: var(--white); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: 5rem; align-items: flex-start; position: relative; z-index: 1;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+  .contact-item-icon {
+    width: 46px; height: 46px; background: rgba(255,255,255,0.1);
+    border-radius: 10px; display: flex; align-items: center;
+    justify-content: center; flex-shrink: 0; font-size: 1.1rem;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .contact-item-text strong {
+    display: block; color: var(--white); font-size: 0.78rem;
+    text-transform: uppercase; letter-spacing: 0.09em;
+    font-weight: 600; margin-bottom: 0.3rem;
+  }
+  .contact-item-text a, .contact-item-text span {
+    color: rgba(255,255,255,0.7); font-size: 1rem; text-decoration: none; transition: color 0.2s;
+  }
+  .contact-item-text a:hover { color: var(--accent); }
+  .no-pressure-box {
+    margin-top: 1rem; padding: 1.25rem 1.5rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1); border-radius: 6px;
+  }
+  .no-pressure-box p:first-child {
+    color: rgba(255,255,255,0.9); font-size: 0.9rem; font-weight: 700; margin-bottom: 0.4rem;
+  }
+  .no-pressure-box p:last-child { color: rgba(255,255,255,0.52); font-size: 0.84rem; line-height: 1.65; }
+  .contact-form {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 8px; padding: 2.25rem; display: flex; flex-direction: column; gap: 1.15rem;
+  }
+  .contact-form-title {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    font-weight: 700; color: var(--white); margin-bottom: 0.25rem;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-field { display: flex; flex-direction: column; gap: 0.4rem; }
+  .form-field label {
+    font-size: 0.78rem; font-weight: 600; color: rgba(255,255,255,0.65);
+    text-transform: uppercase; letter-spacing: 0.07em;
+  }
+  .form-field input, .form-field textarea, .form-field select {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 3px; padding: 0.8rem 1rem; color: var(--white);
+    font-size: 0.95rem; font-family: 'DM Sans', sans-serif;
+    outline: none; transition: border-color 0.2s, background 0.2s; width: 100%;
+  }
+  .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+    border-color: var(--accent); background: rgba(255,255,255,0.12);
+  }
+  .form-field select option { background: var(--navy); color: white; }
+  .form-field textarea { resize: vertical; min-height: 110px; }
+  .form-submit {
+    background: var(--accent); color: var(--white); padding: 1rem 2rem;
+    border: none; border-radius: 3px; font-weight: 700; font-size: 1rem;
+    cursor: pointer; width: 100%; font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 20px rgba(232,145,74,0.4); letter-spacing: 0.02em;
+  }
+  .form-submit:hover { background: var(--accent-hover); transform: translateY(-2px); }
+  .form-note { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-align: center; }
+  .form-success {
+    display: none; background: rgba(46,213,115,0.12);
+    border: 1px solid rgba(46,213,115,0.35); border-radius: 4px;
+    padding: 1rem 1.25rem; color: #6ee7b7; font-size: 0.93rem; text-align: center;
+  }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: #0d1e33; color: rgba(255,255,255,0.45);
+    padding: 3rem 2.5rem; text-align: center;
+  }
+  .footer-inner { max-width: 1200px; margin: 0 auto; }
+  .footer-logo {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem;
+    font-weight: 700; color: rgba(255,255,255,0.8); margin-bottom: 0.75rem;
+  }
+  .footer-logo span { color: var(--accent); }
+  .footer-links {
+    display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+    margin: 1rem 0; list-style: none;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.45); text-decoration: none;
+    font-size: 0.82rem; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: rgba(255,255,255,0.75); }
+  .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 1.5rem 0; }
+  .footer-bottom { font-size: 0.78rem; }
+
+  /* ── FLOATING CTA ───────────────────────────── */
+  .floating-cta {
+    position: fixed; bottom: 1.75rem; right: 1.75rem;
+    z-index: 500; display: flex; flex-direction: column;
+    gap: 0.6rem; align-items: flex-end;
+  }
+  .floating-btn {
+    display: flex; align-items: center; gap: 0.5rem;
+    padding: 0.72rem 1.3rem; border-radius: 100px;
+    font-weight: 700; font-size: 0.85rem; text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;
+  }
+  .floating-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.35); }
+  .floating-btn.call { background: var(--forest); color: var(--white); }
+  .floating-btn.quote { background: var(--accent); color: var(--white); }
+
+  /* ── ANIMATIONS ─────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 1024px) {
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .about-grid { gap: 3.5rem; }
+    .passion-inner { gap: 3rem; }
+  }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .section-inner { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-accent-box { bottom: -1rem; right: 0.5rem; }
+    .about-img-wrap::before { display: none; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+    .process-wrap { grid-template-columns: 1fr 1fr; }
+    .process-wrap::before { display: none; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-grid-3 { grid-template-columns: 1fr 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .passion-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .faq-layout { grid-template-columns: 1fr; }
+    .faq-sidebar { position: static; }
+    .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .floating-cta { bottom: 1rem; right: 1rem; }
+    .stat { padding: 1.2rem 1rem; min-width: 120px; }
+    .trust-item { padding: 0.85rem 1.25rem; }
+    .trustbar-inner { justify-content: flex-start; overflow-x: auto; }
+    .hero-stats { border-radius: 6px; }
+  }
+  @media (max-width: 480px) {
+    .gallery-grid-3 { grid-template-columns: 1fr; }
+    .process-wrap { grid-template-columns: 1fr; }
+    .passion-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home">Cascade Valley <span>Painting</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="nav-cta">Get a Free Quote</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#gallery" onclick="closeMenu()">Gallery</a>
+    <a href="#reviews" onclick="closeMenu()">Reviews</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#faq" onclick="closeMenu()">FAQ</a>
+    <a href="#contact" onclick="closeMenu()">✉ Get a Free Quote →</a>
+  </div>
+</nav>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta">
+  <a href="tel:+13609264995" class="floating-btn call">📞 Call Now</a>
+  <a href="#contact" class="floating-btn quote">✉ Free Quote</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-logo-wrap">
+    <img src="images/logo3.png" alt="Cascade Valley Painting Logo" class="hero-logo">
+  </div>
+  <div class="hero-badge">Serving Snohomish &amp; King County, WA</div>
+  <h1 class="hero-title">Your Home,<br><em>Beautifully Done.</em></h1>
+  <p class="hero-sub">
+    Your trusted partner for exceptional painting services in the greater Seattle area.
+    Licensed, bonded, and insured — with 20+ years of hands-on craftsmanship and a passion for results that last.
+  </p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">✉ Get a Free Quote</a>
+    <a href="tel:+13609264995" class="btn-secondary">📞 (360) 926-4995</a>
+  </div>
+  <div class="hero-divider"></div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Years Experience</span></div>
+    <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Homes Painted</span></div>
+    <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Customer Rated</span></div>
+    <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Satisfaction Guarantee</span></div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trustbar">
+  <div class="trustbar-inner">
+    <div class="trust-item"><span class="ti">🛡</span> Licensed, Bonded &amp; Insured</div>
+    <div class="trust-item"><span class="ti">🏠</span> Owner-Operated</div>
+    <div class="trust-item"><span class="ti">📍</span> Proudly Local — Pacific Northwest</div>
+    <div class="trust-item"><span class="ti">💵</span> Free, No-Pressure Estimates</div>
+    <div class="trust-item"><span class="ti">✅</span> Satisfaction Guaranteed</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-placeholder">
+          <img src="images/eric.jpg" alt="Eric Engstrom – Owner, Cascade Valley Painting">
+        </div>
+        <div class="about-accent-box">
+          <strong>20+</strong>
+          <span>Years of Experience</span>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p class="section-label">The Story Behind the Brush</p>
+        <h2 class="section-title">Painting You Can<br>Count On</h2>
+        <p class="about-lead">
+          I started Cascade Valley Painting because I genuinely enjoy working with my hands and transforming spaces. There's a deep satisfaction in seeing something old become new again — both inside and out.
+        </p>
+        <div class="about-quote">
+          "Making my customers happy and satisfied is what truly drives me. In the Pacific Northwest, a quality coat of paint isn't just about aesthetics — it's protection from the weather, keeping your home sealed, insulated, and beautiful for years to come."
+        </div>
+        <p class="about-lead">
+          As a licensed, bonded, and insured owner-operated business, Eric Engstrom brings personal attention and dedication to every single project — Not a big crew or a franchise. Just a talented craftsman who cares deeply about his work and your home.
+        </p>
+        <ul class="about-points">
+          <li><div class="chk">✔</div><span><strong>Meticulous preparation</strong> — pressure washing, caulking, patching, and priming before a drop of paint is applied.</span></li>
+          <li><div class="chk">✔</div><span><strong>Reliability you can count on</strong> — on time, every time, with clear communication throughout.</span></li>
+          <li><div class="chk">✔</div><span><strong>A clean, respectful workspace</strong> — your home is protected and left spotless at the end of each day.</span></li>
+          <li><div class="chk">✔</div><span><strong>Locally owned, community trusted</strong> — a reputation built entirely on word-of-mouth and repeat customers.</span></li>
+        </ul>
+        <div class="about-cta">
+          <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+          <a href="tel:+13609264995" class="btn-forest">📞 (360) 926-4995</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <p class="section-label reveal">What We Do</p>
+    <h2 class="section-title reveal">Our Services</h2>
+    <p class="section-desc reveal">A comprehensive range of high-quality painting and restoration services — tailored to refresh and protect your home. Meticulous preparation. Flawless execution. Lasting results.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-card-img-wrap">
+          <img src="images/interior_painting.jpg" alt="Interior &amp; Exterior Painting" class="service-card-img">
+        </div>
+        <div class="service-card-body">
+          
+          <h3>Interior &amp; Exterior Painting</h3>
+          <p>Transform your home inside and out with precision painting you can trust. From subtle hues to bold statements — every coat is applied with care for a smooth, lasting finish.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img-wrap">
+          <img src="images/cabinet.jpg" alt="Cabinet Refinishing" class="service-card-img">
+        </div>
+        <div class="service-card-body">
+         
+          <h3>Cabinet Refinishing</h3>
+          <p>Give your kitchen or bathroom a modern update without the cost of full replacement. We ensure a smooth, even, and durable finish that dramatically enhances your home's aesthetic.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img-wrap">
+          <img src="images/deck_staining.jpg" alt="Deck &amp; Fence Staining" class="service-card-img">
+        </div>
+        <div class="service-card-body">
+         
+          <h3>Deck &amp; Fence Staining</h3>
+          <p>Extend the life and beauty of your outdoor structures. Expert staining and sealing with top-quality products designed to withstand the Pacific Northwest elements.</p>
+        </div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-card-img-wrap">
+          <img src="images/pressure_washing.jpg" alt="Pressure Washing" class="service-card-img">
+        </div>
+        <div class="service-card-body">
+         
+          <h3>Pressure Washing</h3>
+          <p>Prepare your surfaces for painting or simply restore their original cleanliness. We effectively remove dirt, grime, moss, and mildew from siding, driveways, decks, and more.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why">
+  <div class="section-inner">
+    <p class="section-label">The Difference</p>
+    <h2 class="section-title">Why Homeowners Choose<br>Cascade Valley Painting</h2>
+    <p class="section-desc">We're not just painters — we're craftspeople who care about your home as much as you do. Here's what sets us apart.</p>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <span class="icon">🏆</span>
+        <h3>20+ Years of Proven Experience</h3>
+        <p>We know what works and what doesn't. Every step — from thorough prep to the final coat — is done right the first time for results that truly last.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="icon">🎯</span>
+        <h3>Attention to Detail That Shows</h3>
+        <p>Clean lines, smooth finishes, no missed spots. The details that separate a professional paint job from a mediocre one — that's where we live.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="icon">🧼</span>
+        <h3>Clean &amp; Respectful Work</h3>
+        <p>We protect your surfaces, cover your belongings, minimize disruption, and leave everything tidy and clean at the end of every single workday.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="icon">💬</span>
+        <h3>Clear Communication</h3>
+        <p>You'll always know what's happening. We keep you informed at every stage — no surprises, no guesswork, no confusion.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="icon">💯</span>
+        <h3>Satisfaction Guaranteed</h3>
+        <p>We stand behind every job. If something isn't right, we make it right — no questions, no hassle, no argument.</p>
+      </div>
+      <div class="why-card reveal">
+        <span class="icon">💵</span>
+        <h3>Honest, No-Pressure Estimates</h3>
+        <p>Straightforward pricing. No hidden fees. No pushy tactics. We're here to help you make the best decision for your home — period.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-inner">
+    <p class="section-label reveal">How It Works</p>
+    <h2 class="section-title reveal">Simple. Transparent. Stress-Free.</h2>
+    <p class="section-desc reveal">From your first call to the final walkthrough — here's exactly what to expect when you work with us.</p>
+    <div class="process-wrap">
+      <div class="process-step reveal">
+        <div class="step-num">1</div>
+        <h3>Free Estimate</h3>
+        <p>We visit your home, assess the project, and provide a clear, no-obligation quote with no hidden costs — ever.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">2</div>
+        <h3>Prep &amp; Protection</h3>
+        <p>Thorough prep is our foundation — pressure washing, caulking, patching, priming. Done right before paint ever touches your home.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">3</div>
+        <h3>Professional Painting</h3>
+        <p>Clean lines, even coats, careful attention to every inch. No rushing, no shortcuts — just excellent work.</p>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">4</div>
+        <h3>Final Walkthrough</h3>
+        <p>We walk through the finished project with you to ensure everything exceeds your expectations before we pack up and leave.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3.5rem;">
+      <a href="#contact" class="btn-primary">Start With a Free Estimate →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-inner wide">
+    <p class="section-label reveal">Our Work</p>
+    <h2 class="section-title reveal">Before &amp; After Gallery</h2>
+    <p class="section-desc reveal">A picture is worth a thousand words. See the dramatic transformations we bring to homes across the greater Seattle area — from faded and weathered to vibrant and protected.</p>
+
+    <h3 class="gallery-section-title reveal">Exterior Transformations</h3>
+    <p class="gallery-hint reveal">👆 Click any image to reveal the after</p>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item clickable" data-label="Exterior — Before"
+        style="background:url('images/house1_before.jpg') center/cover no-repeat;"
+        onclick="toggleBeforeAfter(this,'images/house1_before.jpg','images/house1_after.jpg')"
+        title="Click to see After"></div>
+      <div class="gallery-item clickable" data-label="Exterior — Before"
+        style="background:url('images/house2_before.jpg') center/cover no-repeat;"
+        onclick="toggleBeforeAfter(this,'images/house2_before.jpg','images/house2_after.jpg')"
+        title="Click to see After"></div>
+      <div class="gallery-item clickable" data-label="Exterior — Before"
+        style="background:url('images/house3_before.jpg') center/cover no-repeat;"
+        onclick="toggleBeforeAfter(this,'images/house3_before.jpg','images/house3_after.jpg')"
+        title="Click to see After"></div>
+      <div class="gallery-item clickable" data-label="Exterior — Before"
+        style="background:url('images/house4_before.jpg') center/cover no-repeat;"
+        onclick="toggleBeforeAfter(this,'images/house4_before.jpg','images/house4_after.jpg')"
+        title="Click to see After"></div>
+    </div>
+
+    <h3 class="gallery-section-title reveal" style="margin-top:3rem;">More of Our Work</h3>
+    <p class="section-desc reveal" style="margin-bottom:1.5rem;">From interior transformations to detail trim work, deck staining, and pressure washing — every project reflects our commitment to quality, durability, and a clean professional finish.</p>
+    <div class="gallery-grid-3 reveal">
+      <div class="gallery-item" data-label="Interior Painting" style="background:url('images/interior_painting.jpg') center/cover no-repeat;"></div>
+      <div class="gallery-item" data-label="Deck Staining" style="background:url('images/deck_staining.jpg') center/cover no-repeat;"></div>
+      <div class="gallery-item" data-label="Interior Bedroom" style="background:url('images/inside1.jpg') center/cover no-repeat;"></div>
+      <div class="gallery-item" data-label="High-Reach Exterior Work" style="background:url('images/eric_paint.jpg') center/cover no-repeat;"></div>
+      <div class="gallery-item" data-label="Interior Detail" style="background:url('images/interior2.jpg') center/cover no-repeat;"></div>
+      <div class="gallery-item" data-label="Pressure Washing" style="background:url('images/pressurewash.jpg') center/cover no-repeat;"></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews">
+  <div class="section-inner">
+    <p class="section-label reveal">What Clients Say</p>
+    <h2 class="section-title reveal">Trusted by Homeowners Across<br>the Pacific Northwest</h2>
+    <p class="section-desc reveal">Don't just take our word for it — here's what real customers have to say about working with Cascade Valley Painting.</p>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"From the free estimate to the final walkthrough, everything was seamless. The quality of work is outstanding — our home looks incredible. I'd hire Eric again without hesitation."</p>
+        <div class="reviewer-wrap">
+          <div class="reviewer-avatar">SM</div>
+          <div><div class="reviewer">Sarah M.</div><div class="reviewer-loc">Woodinville, WA • Exterior Painting</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Extremely professional, on time, and the attention to detail was remarkable. He left everything cleaner than he found it. If you need a painter in the area, look no further."</p>
+        <div class="reviewer-wrap">
+          <div class="reviewer-avatar">JT</div>
+          <div><div class="reviewer">James T.</div><div class="reviewer-loc">Marysville, WA • Interior &amp; Trim</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"No pushy sales tactics, just honest work and a fair price. He even touched up a few spots I noticed after the job — above and beyond. This is the painter you want."</p>
+        <div class="reviewer-wrap">
+          <div class="reviewer-avatar">LK</div>
+          <div><div class="reviewer">Linda K.</div><div class="reviewer-loc">Monroe, WA • Deck Staining</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"I was nervous about having someone in my home, but Eric was courteous, quiet, and respectful throughout. The final result was absolutely beautiful. Worth every penny."</p>
+        <div class="reviewer-wrap">
+          <div class="reviewer-avatar">RC</div>
+          <div><div class="reviewer">Robert C.</div><div class="reviewer-loc">Snohomish, WA • Full Interior</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Best painter I've worked with in 15 years of homeownership. Straight communication, no surprises on the bill, and a finish I still get compliments on months later."</p>
+        <div class="reviewer-wrap">
+          <div class="reviewer-avatar">AH</div>
+          <div><div class="reviewer">Angela H.</div><div class="reviewer-loc">Duvall, WA • Exterior Painting</div></div>
+        </div>
+      </div>
+      <div class="review-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"He handled a tricky prep situation on our older home without any complaints — just did the work and did it right. Our house has never looked better. Couldn't be happier."</p>
+        <div class="reviewer-wrap">
+          <div class="reviewer-avatar">DP</div>
+          <div><div class="reviewer">David P.</div><div class="reviewer-loc">Arlington, WA • Exterior &amp; Trim</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PASSION SECTION -->
+<section id="passion">
+  <div class="passion-inner">
+    <div class="reveal">
+      <p class="passion-label">Why It Matters</p>
+      <h2 class="passion-title">Detail That Makes<br>the Difference</h2>
+      <p class="passion-text">When painting a home, applying an even, thorough layer of paint is paramount. It ensures everything is properly sealed — providing insulation and keeping moisture out. A critical factor here in Seattle.</p>
+      <p class="passion-text">What makes working with Cascade Valley Painting a great experience is our unwavering attention to detail. We strive not just to meet, but to exceed your expectations — ensuring every job is done right and every customer is delighted.</p>
+      <p class="passion-text">Thorough preparation is key: from pressure washing exteriors to caulking all cracks around windows and doors, and filling any holes where moisture or critters could intrude.</p>
+    </div>
+    <div class="reveal">
+      <div class="passion-quote">
+        "I love seeing the moment a homeowner steps back and really looks at their house — like it's new again. In the Pacific Northwest, a good quality coat of paint isn't just about aesthetics — it's crucial protection from the weather."
+        <br><br><strong style="font-style:normal;font-size:0.85rem;color:rgba(255,255,255,0.6);">— Eric Engstrom, Owner</strong>
+      </div>
+      <div class="passion-stats">
+        <div class="passion-stat"><strong>7–10</strong><span>Years exterior paint lifespan</span></div>
+        <div class="passion-stat"><strong>100%</strong><span>Owner-operated work</span></div>
+        <div class="passion-stat"><strong>Free</strong><span>No-obligation estimates</span></div>
+        <div class="passion-stat"><strong>5★</strong><span>Rated by homeowners</span></div>
+      </div>
+      <div style="margin-top:1.75rem;">
+        <a href="#contact" class="btn-primary">Schedule Your Free Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="faq-layout">
+      <div>
+        <p class="section-label reveal">FAQ</p>
+        <h2 class="section-title reveal">Common Questions</h2>
+        <p class="section-desc reveal" style="margin-bottom:2rem;">Everything you'd want to know before hiring a painter — answered honestly and directly.</p>
+        <div class="faq-list reveal" id="faqList">
+
+          <div class="faq-item">
+        <button class="faq-question">Are you licensed and insured?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes — Cascade Valley Painting is fully licensed, bonded, and insured. That means you're protected, your home is protected, and you can have complete peace of mind throughout the entire project. We're happy to provide proof of insurance upon request.</div></div>
+      </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How much does it cost to paint a house?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Every project is unique — costs depend on the size of your home, the condition of existing surfaces, and the scope of work. We provide free, no-obligation estimates with clear, itemized pricing so you know exactly what to expect before anything starts. No surprises.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How long will the job take?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Most interior projects are completed in 2–5 days and exterior jobs typically take 3–7 days, depending on size, weather, and complexity. We'll give you a clear timeline before we start — and we stick to it.</div></div>
+          </div>
+
+           <div class="faq-item">
+        <button class="faq-question">What happens if it rains during an exterior job?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We keep a close eye on the weather and plan accordingly. If rain is expected, we'll adjust the schedule to protect your home and ensure the paint adheres properly. We never apply exterior paint in conditions that would compromise the finish — your investment is too important to rush.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How do you protect my furniture and belongings?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We use drop cloths, plastic sheeting, and painter's tape to carefully protect your floors, furniture, fixtures, and trim before any work begins. We treat your home with the same care we'd want for our own — everything is covered, and everything gets cleaned up before we leave.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will there be a strong paint smell?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">We use high-quality, low-VOC paints whenever possible, which significantly reduces odor. For interior projects, we recommend opening windows for ventilation during and after painting. The smell typically fades within a day or two. We're happy to discuss paint options if odor sensitivity is a concern for your household.</div></div>
+      </div>
+
+
+
+          <div class="faq-item">
+            <button class="faq-question">Do I need to be home during the project?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Not necessarily. Many customers continue their normal routines while we work. We'll coordinate access and communication with you ahead of time so everything runs smoothly whether you're home or not.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Do you handle all the prep work?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">Absolutely — and this is one of the most important things we do. Proper prep is the foundation of a lasting paint job. We take care of pressure washing, sanding, patching, caulking, and priming as needed. Every crack around windows and doors is sealed, every hole filled, before any paint goes on.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">What kind of paint do you use?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">We use professional-grade paints from top brands, selected for their durability, coverage, and performance in the Pacific Northwest climate. We can walk you through options and make recommendations based on your home, your goals, and your budget.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">Will my house be messy during the project?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">No. We take extra care to protect your furniture, floors, landscaping, and belongings with drop cloths and masking. We clean up thoroughly at the end of each day so your home stays livable and tidy throughout the project.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">When is the best time to paint the exterior?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">In the Pacific Northwest, exterior painting is best done in dry, mild weather — typically late spring through early fall. Interior painting can be done year-round. We'll help you plan the right timing for your specific project and conditions.</div></div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">How long will the paint last?<span class="faq-chevron">▾</span></button>
+            <div class="faq-answer"><div class="faq-answer-inner">With proper prep and quality materials, most exterior paint jobs last 7–10 years (varies by conditions and exposure). Interior paint can last much longer with normal care. We do the job right the first time so you get maximum value from your investment.</div></div>
+          </div>
+
+          <div class="faq-item">
+        <button class="faq-question">What makes your work different from other painters?<span class="faq-chevron">▾</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">The biggest difference is preparation and personal accountability. As an owner-operated business, I'm on every job — not sending a crew while I'm elsewhere. I take pride in thorough prep work, clean execution, and making sure every customer is genuinely delighted with the result. You're not a number here. Your home gets the attention it deserves.</div></div>
+      </div>
+
+        </div>
+      </div>
+
+      <!-- FAQ Sidebar -->
+      <div class="faq-sidebar reveal">
+        <h3>Ready to Get Started?</h3>
+        <p>Have a question not listed here? Give us a call or shoot us a message. We're happy to talk through your project at no cost and no obligation.</p>
+        <a href="tel:+13609264995" class="sidebar-phone">📞 (360) 926-4995</a>
+        <a href="#contact" class="btn-primary" style="display:flex;justify-content:center;width:100%;margin-bottom:1rem;">✉ Request a Free Quote</a>
+        <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:1rem;margin-top:0.5rem;">
+          <p style="color:rgba(255,255,255,0.85);font-size:0.82rem;font-weight:700;margin-bottom:0.3rem;">🛡 Licensed, Bonded &amp; Insured</p>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;line-height:1.6;">Cascade Valley Painting is fully licensed, bonded, and insured for your peace of mind.</p>
+        </div>
+        <div style="background:rgba(255,255,255,0.06);border-radius:6px;padding:1rem;margin-top:0.75rem;">
+          <p style="color:rgba(255,255,255,0.85);font-size:0.82rem;font-weight:700;margin-bottom:0.3rem;">📍 Service Area</p>
+          <p style="color:rgba(255,255,255,0.5);font-size:0.8rem;line-height:1.6;">Snohomish &amp; King County, WA<br>Including Bothell, Monroe, Woodinville, Redmond, Duvall, Snohomish, Arlington &amp; surrounding areas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Let's Talk About<br>Your Project</h2>
+        <p style="color:rgba(255,255,255,0.65);font-size:1rem;line-height:1.8;margin-bottom:2rem;">
+          Ready to transform your home? Contact us to discuss your painting project and schedule a free consultation. Whether you're renovating, refreshing, or protecting your investment — we're here to help.
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <strong>Call or Text</strong>
+              <a href="tel:+13609264995">(360) 926-4995</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉</div>
+            <div class="contact-item-text">
+              <strong>Email</strong>
+              <a href="mailto:cascadevalleypainting@gmail.com">cascadevalleypainting@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div class="contact-item-text">
+              <strong>Service Area</strong>
+              <span>Snohomish &amp; King County, WA<br>Greater Seattle Area</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🕐</div>
+            <div class="contact-item-text">
+              <strong>Response Time</strong>
+              <span>Typically within 24 hours</span>
+            </div>
+          </div>
+        </div>
+        <div class="no-pressure-box">
+          <p>🛡 Our No-Pressure Promise</p>
+          <p>We provide free estimates with no obligation and no pushy sales tactics. We're here to help you make the best decision for your home — period. Zero pressure, always.</p>
+        </div>
+      </div>
+
+      <div class="contact-form reveal" id="contactForm">
+        <p class="contact-form-title">Request a Free Estimate</p>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin-top:-0.5rem;">Fill out the form below and we'll be in touch within 24 hours.</p>
+        <div class="form-row">
+          <div class="form-field">
+            <label>First Name</label>
+            <input type="text" placeholder="John" id="fname">
+          </div>
+          <div class="form-field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Smith" id="lname">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Phone</label>
+            <input type="tel" placeholder="(425) 555-0100" id="phone">
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" placeholder="cascadevalleypainting@gmail.com" id="email">
+          </div>
+        </div>
+        <div class="form-field">
+          <label>Service Type</label>
+          <select id="service">
+            <option value="">Select a service...</option>
+            <option>Interior Painting</option>
+            <option>Exterior Painting</option>
+            <option>Cabinet Refinishing</option>
+            <option>Deck / Fence Staining</option>
+            <option>Pressure Washing</option>
+            <option>Multiple Services</option>
+            <option>Not Sure Yet</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Project Description</label>
+          <textarea placeholder="Tell us about your home and what you're looking to have done..." id="message"></textarea>
+        </div>
+        <button class="form-submit" onclick="submitForm()">✉ Send My Free Quote Request</button>
+        <p class="form-note">We typically respond within 24 hours. No spam, ever.</p>
+        <div class="form-success" id="formSuccess">
+          ✅ Thank you! We've received your request and will be in touch within 24 hours.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Cascade Valley <span>Painting</span></div>
+    <p style="font-size:0.85rem;margin-bottom:0.5rem;">Professional Painting Services — Greater Seattle Area, Pacific Northwest</p>
+    <ul class="footer-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+      <p>Licensed &amp; Insured &nbsp;·&nbsp; Serving Snohomish &amp; King County, WA &nbsp;·&nbsp; <a href="tel:+13609264995" style="color:rgba(255,255,255,0.45);text-decoration:none;">(360) 926-4995</a></p>
+      <p style="margin-top:0.5rem;opacity:0.4;">© 2025 Cascade Valley Painting. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40);
+    const bottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 150;
+    document.querySelector('.floating-cta').style.opacity = bottom ? '0' : '1';
+    document.querySelector('.floating-cta').style.pointerEvents = bottom ? 'none' : 'auto';
+  });
+
+  // Mobile menu
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('active'); }
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 74, behavior: 'smooth' });
+        closeMenu();
+      }
+    });
+  });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        const inner = item.querySelector('.faq-answer-inner');
+        item.querySelector('.faq-answer').style.maxHeight = inner.offsetHeight + 'px';
+      }
+    });
+  });
+
+  // Gallery toggle
+  function toggleBeforeAfter(el, before, after) {
+    const isAfter = el.dataset.showing === 'after';
+    el.style.background = isAfter
+      ? `url('${before}') center/cover no-repeat`
+      : `url('${after}') center/cover no-repeat`;
+    el.dataset.showing = isAfter ? 'before' : 'after';
+    el.dataset.label = isAfter ? 'Exterior — Before' : 'Exterior — After ✓';
+    el.title = isAfter ? 'Click to see After' : 'Click to see Before';
+  }
+
+  // Form submit
+ async function submitForm() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!fname || !email) {
+    alert('Please fill in at least your name and email so we can get back to you.');
+    return;
+  }
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const response = await fetch('https://formspree.io/f/mgorenwj', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      name: fname + ' ' + document.getElementById('lname').value.trim(),
+      email: email,
+      phone: document.getElementById('phone').value.trim(),
+      service: document.getElementById('service').value,
+      message: document.getElementById('message').value.trim()
+    })
+  });
+
+  if (response.ok) {
+    document.getElementById('formSuccess').style.display = 'block';
+    btn.textContent = '✓ Request Sent!';
+    btn.style.background = '#2F5D50';
+  } else {
+    btn.textContent = '✉ Send My Free Quote Request';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us directly.');
+  }
+}
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
