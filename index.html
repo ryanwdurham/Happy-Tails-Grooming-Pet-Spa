@@ -195,20 +195,23 @@ nav.scrolled { box-shadow: var(--sh-md); }
 
 /* Mobile nav overlay */
 .mob-nav {
-  position: fixed; inset: 0; z-index: 800; background: #fff;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem;
+  position: fixed; inset: 0; z-index: 999; background: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4rem;
   opacity: 0; pointer-events: none; transition: opacity .3s;
   width: 100%; overflow: hidden;
   text-align: center;
 }
 .mob-nav.open { opacity: 1; pointer-events: all; }
 .mob-nav a {
-  font-family: 'Merriweather', serif; font-size: 1.6rem; font-weight: 700; color: var(--txt);
+  font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 700; color: var(--txt);
   display: block; width: 100%; text-align: center;
 }
 .mob-nav a:hover { color: var(--orange); }
-.mob-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--txt); }
-
+.mob-close {
+  position: absolute; top: 1.2rem; right: 1.5rem;
+  background: none; border: none; font-size: 2rem;
+  cursor: pointer; color: var(--txt); line-height: 1;
+}
 /* =============================================
    HERO  — light, two-column, no dark backgrounds
 ============================================= */
