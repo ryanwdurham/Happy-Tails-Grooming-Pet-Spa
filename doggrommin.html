@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Tails Grooming — Bothell's Friendliest Pet Spa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700&family=Merriweather:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   HAPPY TAILS GROOMING
+   Light + warm color palette — white background,
+   soft sky-blue accents, warm coral/orange CTAs.
+   Fonts: Merriweather (headings) + Nunito (body)
+   Completely different from Cascade Valley Painting.
+============================================= */
+
+:root {
+  /* Backgrounds */
+  --bg-white:    #ffffff;
+  --bg-soft:     #f7fbff;
+  --bg-blue:     #eaf5fd;
+  --bg-warm:     #fff8f2;
+  --bg-footer:   #1c3044;
+
+  /* Brand blues */
+  --blue:        #3a9bd5;
+  --blue-light:  #6db8e8;
+  --blue-pale:   #d0eaf8;
+  --blue-deep:   #1e6fa3;
+
+  /* Brand purple / light */
+--orange:      #7c5cbf;
+--orange-dk:   #5e3fa3;
+--orange-pale: #f0ebfa;
+
+  /* Text — all DARK so always readable on light bg */
+  --txt:         #1c3044;
+  --txt-mid:     #3d5a72;
+  --txt-light:   #7a9ab5;
+
+  /* Borders */
+  --border:      #d8eaf6;
+
+  /* Shadows */
+  --sh-sm:  0 2px 12px rgba(30,111,163,.08);
+  --sh-md:  0 6px 28px rgba(30,111,163,.12);
+  --sh-lg:  0 16px 52px rgba(30,111,163,.15);
+
+  /* Radii */
+  --pill:   9999px;
+  --r-xl:   32px;
+  --r-lg:   22px;
+  --r-md:   14px;
+  --r-sm:   9px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg-white);
+  color: var(--txt);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-soft); }
+::-webkit-scrollbar-thumb { background: var(--blue-light); border-radius: 4px; }
+
+/* ── SHARED BUTTONS ── */
+.btn-orange {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: var(--orange); color: #fff;
+  padding: .85rem 2rem; border-radius: var(--pill);
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem;
+  box-shadow: 0 5px 18px rgba(244,132,95,.38);
+  transition: all .25s;
+}
+.btn-orange:hover { background: var(--orange-dk); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,132,95,.45); }
+
+.btn-blue-outline {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: transparent; color: var(--blue-deep);
+  padding: .85rem 2rem; border-radius: var(--pill);
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem;
+  border: 2.5px solid var(--blue);
+  transition: all .25s;
+}
+.btn-blue-outline:hover { background: var(--blue-pale); }
+
+.btn-white {
+  display: inline-block;
+  background: #fff; color: var(--orange-dk);
+  padding: .75rem 1.8rem; border-radius: var(--pill);
+  font-weight: 800; font-size: .9rem;
+  transition: all .2s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: var(--sh-md); }
+
+/* ── SECTION CHIPS / LABELS ── */
+.chip {
+  display: inline-block;
+  padding: .3rem 1rem; border-radius: var(--pill);
+  font-size: .72rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+  margin-bottom: .9rem;
+}
+.chip-orange { background: var(--orange); color: #fff; }
+.chip-blue   { background: var(--blue);   color: #fff; }
+
+/* ── HEADINGS ── */
+h2.sec-h {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.85rem);
+  font-weight: 900; color: var(--txt);
+  line-height: 1.18; letter-spacing: -.01em;
+  margin-bottom: .7rem;
+}
+h2.sec-h em { font-style: italic; color: var(--orange); }
+p.sec-sub {
+  font-size: 1rem; color: var(--txt-mid);
+  line-height: 1.75; max-width: 520px;
+}
+
+/* ── SCROLL REVEAL ── */
+.rv  { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.rvl { opacity: 0; transform: translateX(-24px); transition: opacity .6s ease, transform .6s ease; }
+.rvr { opacity: 0; transform: translateX(24px);  transition: opacity .6s ease, transform .6s ease; }
+.rv.in, .rvl.in, .rvr.in { opacity: 1; transform: none; }
+
+/* ── SECTION WRAPPER ── */
+.sec { padding: 5.5rem 2.5rem; }
+.sec-soft   { background: var(--bg-soft); }
+.sec-blue   { background: var(--bg-blue); }
+.sec-warm   { background: var(--bg-warm); }
+.max { max-width: 1160px; margin: 0 auto; }
+
+/* =============================================
+   TOP RIBBON
+============================================= */
+.ribbon {
+  background: var(--orange);
+  color: #fff; text-align: center;
+  padding: .55rem 1rem;
+  font-size: .82rem; font-weight: 700; letter-spacing: .02em;
+}
+.ribbon a { color: #fff; text-decoration: underline; }
+
+/* =============================================
+   NAV  — white background, dark text
+============================================= */
+nav {
+  position: sticky; top: 0; z-index: 900;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(18px);
+  border-bottom: 2px solid var(--border);
+  padding: .9rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: box-shadow .3s;
+  width: 100%;
+}
+nav.scrolled { box-shadow: var(--sh-md); }
+
+.nav-logo { display: flex; align-items: center; gap: .65rem; }
+.nav-paw {
+  width: 44px; height: 44px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue-light), var(--blue));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; box-shadow: 0 3px 12px rgba(58,155,213,.35);
+}
+.nav-brand {
+  font-family: 'Merriweather', serif;
+  font-weight: 900; font-size: 1.1rem; color: var(--txt); line-height: 1.15;
+}
+.nav-brand small {
+  display: block; font-family: 'Nunito', sans-serif;
+  font-size: .58rem; font-weight: 700; color: var(--txt-light);
+  letter-spacing: .13em; text-transform: uppercase;
+}
+.nav-ul { display: flex; gap: 2rem; list-style: none; }
+.nav-ul a { font-size: .875rem; font-weight: 700; color: var(--txt-mid); transition: color .2s; }
+.nav-ul a:hover { color: var(--orange); }
+.nav-cta {
+  background: var(--orange); color: #fff;
+  padding: .6rem 1.5rem; border-radius: var(--pill);
+  font-weight: 800; font-size: .875rem;
+  box-shadow: 0 4px 14px rgba(244,132,95,.35);
+  transition: all .25s;
+}
+.nav-cta:hover { background: var(--orange-dk); transform: translateY(-2px); }
+.ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.ham span { width: 23px; height: 2.5px; background: var(--txt); border-radius: 2px; display: block; transition: .3s; }
+
+/* Mobile nav overlay */
+.mob-nav {
+  position: fixed; inset: 0; z-index: 800; background: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+  width: 100%; overflow: hidden;
+  text-align: center;
+}
+.mob-nav.open { opacity: 1; pointer-events: all; }
+.mob-nav a {
+  font-family: 'Merriweather', serif; font-size: 1.6rem; font-weight: 700; color: var(--txt);
+  display: block; width: 100%; text-align: center;
+}
+.mob-nav a:hover { color: var(--orange); }
+.mob-close { position: absolute; top: 1.5rem; right: 2rem; background: none; border: none; font-size: 2rem; cursor: pointer; color: var(--txt); }
+
+/* =============================================
+   HERO  — light, two-column, no dark backgrounds
+============================================= */
+.hero {
+  background: linear-gradient(140deg, var(--bg-blue) 0%, #fff 50%, var(--bg-warm) 100%);
+  padding: 4.5rem 2.5rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero-circle1 {
+  position: absolute; top: -100px; right: -100px;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,184,232,.3), transparent 70%);
+  pointer-events: none;
+}
+.hero-circle2 {
+  position: absolute; bottom: -60px; left: -60px;
+  width: 280px; height: 280px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(244,132,95,.18), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center; position: relative; z-index: 1;
+}
+
+/* Hero text */
+.hero-tag {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--blue-pale); color: var(--blue-deep);
+  border-radius: var(--pill); padding: .4rem 1.1rem;
+  font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  margin-bottom: 1.3rem; border: 2px solid var(--blue-light);
+}
+h1.hero-h {
+  font-family: 'Merriweather', serif;
+  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  font-weight: 900; color: var(--txt);
+  line-height: 1.12; letter-spacing: -.02em; margin-bottom: 1.3rem;
+}
+h1.hero-h em { font-style: italic; color: var(--orange); }
+.hero-p {
+  font-size: 1.05rem; color: var(--txt-mid);
+  line-height: 1.78; max-width: 450px; margin-bottom: 2rem; font-weight: 500;
+}
+/* Buttons row */
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* Trust badges — below buttons, separated by a line so NEVER overlaps */
+.hero-trust {
+  display: flex; gap: 1.4rem; flex-wrap: wrap;
+  margin-top: 1.8rem;
+  padding-top: 1.6rem;
+  border-top: 2px solid var(--border);
+}
+.trust-pill {
+  display: flex; align-items: center; gap: .45rem;
+  font-size: .8rem; font-weight: 700; color: var(--txt-mid);
+}
+.trust-pip {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--orange); flex-shrink: 0;
+}
+
+/* Hero photo */
+.hero-photo-wrap { position: relative; }
+.hero-photo {
+  border-radius: var(--r-xl); aspect-ratio: 4/5;
+  background: url('https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=900&q=80') center/cover;
+  box-shadow: var(--sh-lg); filter: saturate(.88);
+  overflow: hidden;
+}
+.hero-badge {
+  position: absolute; background: #fff;
+  border-radius: var(--r-lg); box-shadow: var(--sh-md);
+  border: 2px solid var(--border);
+  padding: .85rem 1.1rem;
+  display: flex; align-items: center; gap: .7rem;
+}
+.hero-badge.b1 { top: -1rem; left: -1.8rem; }
+.hero-badge.b2 { bottom: 1.8rem; right: -1.8rem; }
+.hb-ico { font-size: 1.7rem; }
+.hb-txt strong { display: block; font-family: 'Merriweather', serif; font-size: .9rem; font-weight: 700; color: var(--txt); }
+.hb-txt small  { font-size: .72rem; color: var(--txt-light); font-weight: 600; }
+
+/* =============================================
+   INFO STRIP  — blue background, dark text
+============================================= */
+.strip {
+  background: var(--blue);
+  padding: 1.1rem 2.5rem;
+  display: flex; justify-content: center; gap: 3.5rem; flex-wrap: wrap;
+}
+.strip-item { display: flex; align-items: center; gap: .65rem; }
+.strip-item .si { font-size: 1.15rem; }
+.strip-item p { font-size: .875rem; font-weight: 800; color: #fff; }
+.strip-item p small { display: block; font-weight: 500; font-size: .76rem; color: rgba(255,255,255,.78); }
+.strip-item a { color: #fff; }
+
+/* =============================================
+   SERVICES
+============================================= */
+.svc-header { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem; }
+
+/* Pill-row list layout */
+.svc-list { display: flex; flex-direction: column; gap: .9rem; }
+.svc-row {
+  background: var(--bg-white); border: 2px solid var(--border);
+  border-radius: 60px;
+  padding: 1.1rem 1.8rem;
+  display: flex; align-items: center; gap: 1.4rem;
+  transition: all .3s; position: relative; overflow: hidden;
+}
+.svc-row::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 5px; background: var(--blue-light);
+  transform: scaleY(0); transform-origin: bottom; transition: transform .35s;
+}
+.svc-row:hover { box-shadow: var(--sh-md); border-color: var(--blue); transform: translateX(4px); }
+.svc-row:hover::before { transform: scaleY(1); }
+.svc-row.popular { border-color: var(--orange); }
+.svc-row.popular::before { background: var(--orange); }
+.svc-ico {
+  width: 52px; height: 52px; border-radius: 16px; flex-shrink: 0;
+  background: var(--bg-blue); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+}
+.svc-row.popular .svc-ico { background: var(--orange-pale); border-color: rgba(244,132,95,.25); }
+.svc-info { flex: 1; }
+.svc-info h3 { font-family: 'Merriweather', serif; font-size: 1rem; font-weight: 700; color: var(--txt); margin-bottom: .2rem; }
+.svc-info p  { font-size: .82rem; color: var(--txt-mid); line-height: 1.55; }
+.svc-price-wrap { text-align: right; flex-shrink: 0; margin-right: .5rem; }
+.svc-from  { font-size: .68rem; font-weight: 700; color: var(--txt-light); text-transform: uppercase; letter-spacing: .06em; }
+.svc-price { font-family: 'Merriweather', serif; font-size: 1.5rem; font-weight: 900; color: var(--orange); }
+.pop-tag {
+  position: absolute; top: 50%; right: 1.4rem; transform: translateY(-50%);
+  background: var(--orange); color: #fff;
+  border-radius: var(--pill); padding: .2rem .75rem;
+  font-size: .65rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* Cat banner */
+.cat-banner {
+  background: linear-gradient(135deg, var(--bg-blue), var(--blue-pale));
+  border: 2px solid var(--blue-light);
+  border-radius: var(--r-lg); padding: 1.5rem 2rem;
+  display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap; margin-top: 1.4rem;
+}
+.cat-banner h4 { font-family: 'Merriweather', serif; font-size: 1.05rem; font-weight: 700; color: var(--txt); margin-bottom: .25rem; }
+.cat-banner p  { font-size: .875rem; color: var(--txt-mid); line-height: 1.55; }
+
+/* =============================================
+   PRICING
+============================================= */
+.price-layout { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.5rem; align-items: start; }
+.price-card {
+  background: var(--bg-white); border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--sh-md); border: 2px solid var(--border);
+}
+/* Mobile — make pricing table scroll sideways instead of cutting off */
+@media (max-width: 640px) {
+  .price-card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .price-head { min-width: 420px; }
+  .price-row  { min-width: 420px; }
+  .price-img { display: none; }
+}
+.price-head {
+  background: var(--blue); color: #fff;
+  padding: 1.1rem 1.5rem;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: .5rem;
+  font-size: .76rem; font-weight: 800; letter-spacing: .04em;
+}
+.price-row {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: .5rem;
+  padding: .95rem 1.5rem; border-bottom: 1px solid var(--border);
+  transition: background .2s; align-items: center;
+}
+.price-row:last-child { border-bottom: none; }
+.price-row:hover { background: var(--bg-blue); }
+.price-row .pn { font-size: .85rem; font-weight: 700; color: var(--txt); }
+.price-row .pc { font-family: 'Merriweather', serif; font-size: .9rem; font-weight: 700; color: var(--orange); text-align: center; }
+
+.addon-card {
+  background: var(--bg-white); border-radius: var(--r-lg);
+  padding: 2rem; box-shadow: var(--sh-sm); border: 2px solid var(--border);
+}
+.addon-card h3 { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 900; color: var(--txt); margin-bottom: .4rem; }
+.addon-list { display: flex; flex-direction: column; gap: .65rem; margin-top: 1.1rem; }
+.addon-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: .8rem 1.1rem;
+  background: var(--bg-soft); border: 2px solid var(--border); border-radius: var(--pill);
+  transition: all .2s;
+}
+.addon-row:hover { border-color: var(--orange); transform: translateX(4px); }
+.addon-row span { font-size: .875rem; font-weight: 700; color: var(--txt); }
+.addon-price { font-family: 'Merriweather', serif; font-size: 1rem; font-weight: 700; color: var(--orange); }
+
+/* =============================================
+   BOOKING FORM
+============================================= */
+.book-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.book-steps { display: flex; flex-direction: column; }
+.bstep { display: flex; gap: 1.1rem; padding: 1.3rem 0; position: relative; }
+.bstep:not(:last-child)::after { content: ''; position: absolute; left: 19px; top: 52px; bottom: 0; width: 2px; background: var(--border); }
+.bstep-num {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0; z-index: 1;
+  background: var(--orange); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: .95rem;
+  box-shadow: 0 3px 12px rgba(244,132,95,.35);
+}
+.bstep h4 { font-size: .93rem; font-weight: 800; color: var(--txt); margin-bottom: .2rem; }
+.bstep p  { font-size: .82rem; color: var(--txt-mid); line-height: 1.6; }
+
+.form-card {
+  background: var(--bg-white); border-radius: var(--r-xl);
+  padding: 2.2rem; box-shadow: var(--sh-lg); border: 2px solid var(--border);
+}
+.form-card h3 { font-family: 'Merriweather', serif; font-size: 1.45rem; font-weight: 900; color: var(--txt); margin-bottom: .25rem; }
+.form-card .fn { font-size: .8rem; color: var(--txt-light); margin-bottom: 1.5rem; }
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: .9rem; }
+.fg { display: flex; flex-direction: column; gap: .35rem; margin-bottom: .9rem; }
+.fg label { font-size: .72rem; font-weight: 800; color: var(--txt); text-transform: uppercase; letter-spacing: .07em; }
+.fg input, .fg select, .fg textarea {
+  background: var(--bg-soft); border: 2px solid var(--border);
+  border-radius: var(--r-sm); padding: .72rem .95rem;
+  font-family: 'Nunito', sans-serif; font-size: .9rem; color: var(--txt);
+  transition: border-color .2s, background .2s; width: 100%;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--blue); background: var(--bg-blue); }
+.fg select option { background: #fff; }
+.form-submit {
+  width: 100%; background: var(--orange); color: #fff; border: none;
+  padding: .95rem; border-radius: var(--pill);
+  font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 800;
+  cursor: pointer; transition: all .3s;
+  box-shadow: 0 5px 18px rgba(244,132,95,.38);
+}
+.form-submit:hover { background: var(--orange-dk); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(244,132,95,.45); }
+
+/* =============================================
+   WHY CHOOSE US
+============================================= */
+.why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4.5rem; align-items: center; }
+.why-photo-wrap { position: relative; }
+.why-photo {
+  border-radius: var(--r-xl); aspect-ratio: 1; overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80') center/cover;
+  box-shadow: var(--sh-lg); filter: saturate(.82);
+}
+.why-float {
+  position: absolute; bottom: -1rem; right: -1.5rem;
+  background: #fff; border-radius: var(--r-md);
+  box-shadow: var(--sh-md); border: 2px solid var(--border);
+  padding: 1.1rem 1.4rem; min-width: 200px;
+}
+.why-float .wf-stars { color: var(--orange); font-size: 1rem; margin-bottom: .3rem; }
+.why-float h4 { font-family: 'Merriweather', serif; font-size: .95rem; font-weight: 700; color: var(--txt); margin-bottom: .2rem; }
+.why-float p  { font-size: .78rem; color: var(--txt-mid); line-height: 1.55; }
+.why-pts { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.3rem; }
+.wpt { display: flex; gap: 1rem; align-items: flex-start; }
+.wpt-ico {
+  width: 46px; height: 46px; border-radius: var(--r-sm); flex-shrink: 0;
+  background: var(--bg-blue); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
+  transition: all .25s;
+}
+.wpt:hover .wpt-ico { background: var(--blue-pale); border-color: var(--blue); }
+.wpt h4 { font-size: .92rem; font-weight: 800; color: var(--txt); margin-bottom: .2rem; }
+.wpt p  { font-size: .83rem; color: var(--txt-mid); line-height: 1.65; }
+.cert-row { display: flex; gap: .65rem; flex-wrap: wrap; margin-top: 1.8rem; }
+.cert-pill {
+  display: flex; align-items: center; gap: .4rem;
+  background: var(--bg-blue); border: 2px solid var(--blue-light);
+  border-radius: var(--pill); padding: .38rem .9rem;
+  font-size: .75rem; font-weight: 800; color: var(--blue-deep);
+}
+
+/* =============================================
+   GALLERY — single pet photos, no before/after
+============================================= */
+.gal-hdr { display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2.5rem; }
+.gal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* 3 per row on desktop */
+  gap: 1rem;
+}
+.gal-item { border-radius: var(--r-lg); overflow: hidden; position: relative; cursor: pointer; }
+/* Remove the :first-child span-2 rule — all equal size now */
+.gal-img { width: 100%; height: 100%; background-size: cover; background-position: center; filter: saturate(.78); transition: transform .5s, filter .5s; }
+.gal-item:hover .gal-img { transform: scale(1.06); filter: saturate(1); }
+.gal-cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(28,48,68,.7), transparent);
+  padding: 1rem 1.2rem; opacity: 0; transition: opacity .3s;
+  display: flex; align-items: flex-end;
+}
+.gal-item:hover .gal-cap { opacity: 1; }
+.gal-cap span { font-size: .82rem; font-weight: 800; color: #fff; }
+
+/* Tablet — 2 per row */
+@media (max-width: 1050px) {
+  .gal-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile — 1 per row */
+@media (max-width: 640px) {
+  .gal-grid { grid-template-columns: 1fr; }
+}
+/* =============================================
+   REVIEWS
+============================================= */
+.rev-hdr { text-align: center; margin-bottom: 3rem; }
+.rev-hdr .sec-sub { margin: 0 auto; }
+.rev-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+.rev-card {
+  background: var(--bg-white); border-radius: var(--r-lg);
+  padding: 1.7rem; border: 2px solid var(--border);
+  transition: all .3s; position: relative;
+}
+.rev-card:hover { border-color: var(--blue); box-shadow: var(--sh-md); transform: translateY(-4px); }
+.rev-card.feat { border-color: var(--orange); background: var(--orange-pale); }
+.rev-quote { position: absolute; top: 1rem; right: 1.2rem; font-family: 'Merriweather', serif; font-size: 3.5rem; color: var(--blue-pale); opacity: .7; line-height: 1; }
+.rev-card.feat .rev-quote { color: rgba(244,132,95,.25); }
+.rev-stars { color: var(--orange); font-size: .95rem; margin-bottom: .9rem; }
+.rev-text  { font-size: .875rem; color: var(--txt-mid); line-height: 1.8; font-style: italic; margin-bottom: 1.2rem; }
+.rev-foot  { display: flex; align-items: center; gap: .7rem; }
+.rev-av {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: var(--blue-pale); color: var(--blue-deep);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 900; font-size: .85rem;
+}
+.rev-card.feat .rev-av { background: var(--orange); color: #fff; }
+.rev-name { font-size: .875rem; font-weight: 800; color: var(--txt); }
+.rev-pet  { font-size: .73rem; color: var(--txt-light); }
+
+/* =============================================
+   SKIN / COAT HEALTH
+============================================= */
+.skin-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+.skin-list { display: flex; flex-direction: column; gap: .8rem; margin-top: 1.8rem; }
+.skin-row {
+  background: var(--bg-white); border-left: 4px solid var(--blue);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: 1rem 1.3rem; display: flex; gap: 1rem; align-items: flex-start;
+  box-shadow: var(--sh-sm); transition: all .25s;
+}
+.skin-row:hover { border-left-color: var(--orange); transform: translateX(5px); }
+.skin-row .sk-ico { font-size: 1.4rem; flex-shrink: 0; margin-top: 1px; }
+.skin-row h4 { font-size: .88rem; font-weight: 800; color: var(--txt); margin-bottom: .2rem; }
+.skin-row p  { font-size: .8rem; color: var(--txt-mid); line-height: 1.6; }
+.oat-card {
+  background: linear-gradient(135deg, var(--bg-blue), var(--blue-pale));
+  border: 2px solid var(--blue-light); border-radius: var(--r-xl);
+  padding: 2.2rem; text-align: center;
+}
+.oat-card .oc-ico { font-size: 4rem; display: block; margin-bottom: 1rem; }
+.oat-card h3 { font-family: 'Merriweather', serif; font-size: 1.4rem; font-weight: 900; color: var(--txt); margin-bottom: .5rem; }
+.oat-card p  { font-size: .875rem; color: var(--txt-mid); line-height: 1.7; margin-bottom: 1.4rem; }
+.vet-note {
+  background: var(--bg-soft); border-left: 3px solid var(--orange);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  padding: .9rem 1.1rem; font-size: .8rem; color: var(--txt-mid); line-height: 1.65; margin-top: 1rem;
+}
+
+/* =============================================
+   SAFETY TIPS
+============================================= */
+.tips-list { display: flex; flex-direction: column; gap: .9rem; margin-top: 2.5rem; }
+.tip-row {
+  background: var(--bg-white); border-radius: 60px;
+  padding: 1.2rem 1.8rem; border: 2px solid var(--border);
+  display: flex; align-items: center; gap: 1.3rem;
+  transition: all .3s;
+}
+.tip-row:hover { border-color: var(--blue); box-shadow: var(--sh-sm); transform: translateX(5px); }
+.tip-row .tip-ico { font-size: 1.8rem; flex-shrink: 0; }
+.tip-row h4 { font-size: .9rem; font-weight: 800; color: var(--txt); margin-bottom: .15rem; }
+.tip-row p  { font-size: .82rem; color: var(--txt-mid); line-height: 1.55; }
+
+/* =============================================
+   FAQ
+============================================= */
+.faq-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: start; }
+.faq-cta-box {
+  background: linear-gradient(135deg, var(--orange), var(--orange-dk));
+  border-radius: var(--r-lg); padding: 2.2rem;
+  color: #fff; margin-top: 2rem; text-align: center;
+}
+.faq-cta-box h4 { font-family: 'Merriweather', serif; font-size: 1.3rem; font-weight: 900; margin-bottom: .4rem; }
+.faq-cta-box p  { font-size: .875rem; opacity: .9; line-height: 1.65; margin-bottom: 1.4rem; }
+.faq-list { display: flex; flex-direction: column; gap: .7rem; }
+.faq-item { background: var(--bg-white); border: 2px solid var(--border); border-radius: var(--r-md); overflow: hidden; transition: border-color .25s; }
+.faq-item.open { border-color: var(--blue); }
+.faq-btn {
+  width: 100%; text-align: left; background: none; border: none;
+  padding: 1.1rem 1.3rem;
+  font-family: 'Nunito', sans-serif; font-size: .9rem; font-weight: 700; color: var(--txt);
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  transition: color .2s;
+}
+.faq-btn:hover { color: var(--orange); }
+.faq-icon {
+  width: 27px; height: 27px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg-blue); border: 2px solid var(--blue-light);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .95rem; font-weight: 800; color: var(--blue-deep);
+  transition: all .3s;
+}
+.faq-item.open .faq-icon { background: var(--blue); color: #fff; border-color: var(--blue); transform: rotate(45deg); }
+.faq-ans {
+  max-height: 0; overflow: hidden; transition: max-height .4s ease, padding .3s;
+  font-size: .86rem; color: var(--txt-mid); line-height: 1.75;
+  padding: 0 1.3rem;
+}
+.faq-ans.open { max-height: 250px; padding: 0 1.3rem 1.2rem; }
+
+/* =============================================
+   ABOUT
+============================================= */
+.about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.about-photo-wrap { position: relative; }
+.about-photo {
+  border-radius: var(--r-xl); aspect-ratio: 4/5;
+  background: url('images/golenr.jpg') center/cover;
+  box-shadow: var(--sh-lg); filter: saturate(.82);
+}
+.about-badge {
+  position: absolute; bottom: 1.5rem; left: -1.8rem;
+  background: #fff; border-radius: var(--r-md);
+  box-shadow: var(--sh-md); border: 2px solid var(--border);
+  padding: 1.1rem 1.4rem; text-align: center;
+}
+.about-badge .big { font-family: 'Merriweather', serif; font-size: 2.4rem; font-weight: 900; color: var(--orange); line-height: 1; }
+.about-badge small { font-size: .72rem; font-weight: 700; color: var(--txt-light); }
+.about-txt p { font-size: .93rem; color: var(--txt-mid); line-height: 1.8; margin-bottom: 1rem; }
+.vals { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-top: 1.5rem; }
+.val {
+  background: var(--bg-soft); border: 2px solid var(--border);
+  border-radius: var(--r-md); padding: 1.1rem; transition: all .25s;
+}
+.val:hover { border-color: var(--blue); background: var(--bg-blue); }
+.val .vi { font-size: 1.4rem; display: block; margin-bottom: .4rem; }
+.val h4 { font-size: .83rem; font-weight: 800; color: var(--txt); margin-bottom: .2rem; }
+.val p  { font-size: .77rem; color: var(--txt-mid); line-height: 1.55; }
+
+/* =============================================
+   CONTACT
+============================================= */
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.contact-items { margin-top: 1.8rem; display: flex; flex-direction: column; gap: 1.1rem; }
+.c-item { display: flex; gap: .95rem; align-items: flex-start; }
+.c-ico {
+  width: 44px; height: 44px; border-radius: var(--r-sm); flex-shrink: 0;
+  background: var(--bg-blue); border: 2px solid var(--blue-light);
+  display: flex; align-items: center; justify-content: center; font-size: 1.15rem;
+}
+.c-item h4 { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--orange); margin-bottom: .2rem; }
+.c-item p  { font-size: .88rem; color: var(--txt); line-height: 1.6; }
+.c-item a  { color: var(--txt); }
+.c-item a:hover { color: var(--orange); }
+.hours-grid { display: flex; flex-direction: column; gap: .25rem; margin-top: 1.6rem; }
+.hr-row { display: flex; justify-content: space-between; padding: .5rem 0; border-bottom: 1px solid var(--border); font-size: .845rem; }
+.hr-day  { color: var(--txt-light); font-weight: 600; }
+.hr-time { font-weight: 800; color: var(--txt); }
+.map-box {
+  background: var(--bg-blue); border: 2px solid var(--blue-light);
+  border-radius: var(--r-xl); aspect-ratio: 1;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: .7rem; font-size: 3rem; color: var(--txt-light);
+}
+.map-box p { font-size: .85rem; font-weight: 700; color: var(--txt-light); }
+.map-addr {
+  background: var(--bg-white); border: 2px solid var(--border);
+  border-radius: var(--r-sm); padding: .85rem 1.1rem;
+  text-align: center; margin-top: .9rem; font-size: .875rem; font-weight: 700; color: var(--txt);
+}
+
+/* =============================================
+   FOOTER — dark navy background, light text
+============================================= */
+footer { background: var(--bg-footer); color: rgba(255,255,255,.75); padding: 4rem 2.5rem 2rem; }
+.foot-inner { max-width: 1160px; margin: 0 auto; }
+.foot-grid { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.foot-brand-name { font-family: 'Merriweather', serif; font-weight: 900; font-size: 1.1rem; color: #fff; }
+.foot-brand-sub  { font-size: .7rem; color: rgba(255,255,255,.45); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-top: .1rem; }
+.foot-brand p { font-size: .84rem; color: rgba(255,255,255,.45); line-height: 1.75; margin-top: .9rem; max-width: 210px; }
+.foot-soc { display: flex; gap: .6rem; margin-top: 1.2rem; }
+.soc-btn {
+  width: 34px; height: 34px; border-radius: 8px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .85rem; cursor: pointer; transition: all .2s;
+}
+.soc-btn:hover { background: var(--orange); border-color: var(--orange); }
+.foot-col h4 { font-size: .72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--blue-light); margin-bottom: 1rem; }
+.foot-col ul { list-style: none; display: flex; flex-direction: column; gap: .5rem; }
+.foot-col ul li a { font-size: .84rem; color: rgba(255,255,255,.45); transition: color .2s; }
+.foot-col ul li a:hover { color: #fff; }
+.foot-bottom {
+  border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.4rem;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.foot-bottom p { font-size: .78rem; color: rgba(255,255,255,.3); }
+.foot-bottom span { color: var(--orange); }
+
+/* =============================================
+   SUCCESS MODAL
+============================================= */
+.modal {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(28,48,68,.5); backdrop-filter: blur(6px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none; transition: opacity .3s;
+}
+.modal.show { opacity: 1; pointer-events: all; }
+.modal-box {
+  background: #fff; border-radius: var(--r-xl); padding: 2.8rem;
+  max-width: 400px; width: 90%; text-align: center;
+  box-shadow: var(--sh-lg); transform: scale(.92); transition: transform .3s;
+}
+.modal.show .modal-box { transform: scale(1); }
+.modal-ico { font-size: 3.5rem; display: block; margin-bottom: .9rem; }
+.modal-box h3 { font-family: 'Merriweather', serif; font-size: 1.7rem; font-weight: 900; color: var(--txt); margin-bottom: .5rem; }
+.modal-box p  { font-size: .88rem; color: var(--txt-mid); line-height: 1.7; margin-bottom: 1.8rem; }
+.modal-close {
+  background: var(--orange); color: #fff; border: none;
+  padding: .75rem 2rem; border-radius: var(--pill);
+  font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .9rem;
+  cursor: pointer; transition: all .2s;
+}
+.modal-close:hover { background: var(--orange-dk); }
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+
+/* Prevent horizontal scroll / blank space on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 1050px) {
+  nav { padding: .8rem 1rem; }
+  .nav-ul { display: none; }
+  /* Hide Book Now button on tablet/mobile to avoid overlap with hamburger */
+  .nav-cta { display: none; }
+  .ham { display: flex; }
+  .hero { padding: 3.5rem 1.5rem 4rem; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-photo-wrap { max-width: 480px; }
+  .sec { padding: 4rem 1.5rem; }
+  .strip { padding: .9rem 1rem; gap: 1rem; flex-wrap: wrap; }
+  .strip-item p { font-size: .8rem; }
+  .price-layout, .book-layout, .why-layout,
+  .skin-layout, .about-layout, .contact-layout, .faq-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .rev-grid { grid-template-columns: 1fr 1fr; }
+  .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gal-item:first-child { grid-row: auto; }
+  .foot-grid { grid-template-columns: 1fr 1fr; }
+  .vals { grid-template-columns: 1fr 1fr; }
+  .why-float { right: 0; }
+  .about-badge { left: 0; }
+}
+
+@media (max-width: 640px) {
+  /* Core layout */
+  h1.hero-h { font-size: 2.2rem; }
+  .hero { padding: 2.5rem 1rem 3rem; }
+  .hero-photo-wrap { display: none; }
+  .svc-row { border-radius: var(--r-lg); flex-wrap: wrap; }
+  .pop-tag { display: none; }
+  .rev-grid { grid-template-columns: 1fr; }
+  .gal-grid { grid-template-columns: 1fr; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .frow { grid-template-columns: 1fr; }
+  .vals { grid-template-columns: 1fr; }
+  .hero-trust { gap: .9rem; }
+  .sec { padding: 3rem 1rem; }
+
+  /* Hours — stack day and time on separate lines so nothing is cut off */
+  .hours-grid { display: flex; flex-direction: column; gap: .3rem; margin-top: 1.2rem; }
+  .hr-row {
+    display: flex; justify-content: space-between;
+    padding: .5rem .75rem;
+    background: var(--bg-soft);
+    border-radius: var(--r-sm);
+    border: 1px solid var(--border);
+    font-size: .85rem;
+  }
+  .hr-day  { font-weight: 600; color: var(--txt-mid); }
+  .hr-time { font-weight: 800; color: var(--txt); }
+
+  /* Map — full width, fixed height so it doesn't overflow */
+  .map-box {
+    width: 100%;
+    aspect-ratio: auto;
+    height: 280px;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+  }
+  .map-box iframe { width: 100% !important; height: 100% !important; }
+  .map-addr { font-size: .8rem; }
+
+  /* Contact layout */
+  .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .c-items { margin-top: 1rem; }
+
+  /* Footer — single column, centered */
+  .foot-grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; }
+  .foot-brand p { max-width: 100%; }
+  .foot-soc { justify-content: center; }
+  footer { padding: 3rem 1.2rem 2rem; }
+  .foot-bottom { flex-direction: column; text-align: center; gap: .5rem; }
+
+  /* Strip info bar — 2 columns on mobile */
+  .strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    padding: 1rem;
+  }
+  .strip-item { justify-content: flex-start; }
+
+  /* Pricing table — scrollable on small screens */
+  .pricing-table-wrap, .price-card { overflow-x: auto; }
+  .price-head, .price-row { min-width: 480px; }
+
+  /* Gallery images */
+  .gal-item img { height: 260px !important; }
+
+  /* Booking form */
+  .form-card { padding: 1.5rem 1rem; }
+
+  /* Services */
+  .svc-price-wrap { text-align: left; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- RIBBON -->
+<div class="ribbon">🎉 New Client Special — 20% off your first visit! <a href="#booking">Book Now →</a></div>
+
+<!-- ══ NAV ══ -->
+<nav id="mainNav">
+  <div class="nav-logo">
+    <div class="nav-paw">🐾</div>
+    <div>
+      <div class="nav-brand">Happy Tails Grooming<small>Bothell's Friendliest Pet Spa</small></div>
+    </div>
+  </div>
+  <ul class="nav-ul">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">📅 Book Now</a>
+  <button class="ham" id="hamBtn"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="#services"  class="ml">Services</a>
+  <a href="#pricing"   class="ml">Pricing</a>
+  <a href="#gallery"   class="ml">Gallery</a>
+  <a href="#reviews"   class="ml">Reviews</a>
+  <a href="#faq"       class="ml">FAQ</a>
+  <a href="#about"     class="ml">About</a>
+  <a href="#contact"   class="ml">Contact</a>
+  <a href="#booking" id="mobBookBtn" class="btn-orange" style="margin-top:.5rem;text-align:center;justify-content:center;width:220px;">📅 Book Appointment</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-circle1"></div>
+  <div class="hero-circle2"></div>
+  <div class="hero-inner">
+
+    <div class="hero-left">
+      <div class="hero-tag">⭐ Bothell's #1 Rated Pet Spa</div>
+      <h1 class="hero-h">Your Pet Deserves<br>the <em>Best Care</em><br>in Bothell.</h1>
+      <p class="hero-p">Premium, stress-free grooming for dogs &amp; cats. Where happy tails and gentle hands go hand in hand — right here in your neighborhood.</p>
+
+      <!-- Buttons -->
+      <div class="hero-btns">
+        <a href="#booking"  class="btn-orange">📅 Book an Appointment</a>
+        <a href="#services" class="btn-blue-outline">Our Services →</a>
+      </div>
+
+      <!-- Trust row — BELOW buttons, separated by border line so it never overlaps -->
+      <div class="hero-trust">
+        <div class="trust-pill"><span class="trust-pip"></span>500+ Happy Clients</div>
+        <div class="trust-pill"><span class="trust-pip"></span>4.9★ Google Rating</div>
+        <div class="trust-pill"><span class="trust-pip"></span>Fear Free Certified</div>
+        <div class="trust-pill"><span class="trust-pip"></span>8+ Years in Bothell</div>
+      </div>
+    </div>
+
+    <div class="hero-photo-wrap">
+      <div class="hero-photo"></div>
+      <div class="hero-badge b1">
+        <div class="hb-ico">🏆</div>
+        <div class="hb-txt"><strong>Top Rated 2024</strong><small>Bothell, WA</small></div>
+      </div>
+      <div class="hero-badge b2">
+        <div class="hb-ico">❤️</div>
+        <div class="hb-txt"><strong>500+ Pets Served</strong><small>& growing weekly</small></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="strip-item"><span class="si">🕐</span><p>Mon–Sat 8am–6pm<small>Sun 9am–4pm</small></p></div>
+  <div class="strip-item"><span class="si">📞</span><p><a href="tel:4252708480">(425) 270-8480</a><small>Call or Text</small></p></div>
+  <div class="strip-item"><span class="si">📍</span><p>1428 Evergreen Way<small>Bothell, WA 98021</small></p></div>
+  <div class="strip-item"><span class="si">🐱</span><p>Dogs &amp; Cats Welcome<small>Walk-ins when available</small></p></div>
+</div>
+
+<!-- ══ SERVICES ══ -->
+<section class="sec" id="services">
+  <div class="max">
+    <div class="svc-header rv">
+      <div>
+        <div class="chip chip-orange">What We Offer</div>
+        <h2 class="sec-h">Everything Your Pet <em>Loves</em></h2>
+      </div>
+      <p class="sec-sub" style="text-align:right;">Professional, gentle care for every breed, size, and temperament.</p>
+    </div>
+
+    <div class="svc-list">
+      <div class="svc-row popular rv">
+        <div class="svc-ico">✂️</div>
+        <div class="svc-info">
+          <h3>Full Groom</h3>
+          <p>Bath + breed-specific haircut. Our stylists consult with you for the perfect look. Includes nail trim &amp; ear cleaning.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$50</div></div>
+        <span class="pop-tag">⭐ Most Popular</span>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">🛁</div>
+        <div class="svc-info">
+          <h3>Full-Service Bath</h3>
+          <p>Premium shampoo &amp; conditioning bath, high-velocity blow-dry, brush-out, ear cleaning, and a spritz of cologne. They'll SHINE.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$30</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">🌿</div>
+        <div class="svc-info">
+          <h3>Shed Control Treatment</h3>
+          <p>Deshedding shampoo + high-velocity blow-out removes up to 80% of loose undercoat. Less fur, more cuddles.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$15</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">💅</div>
+        <div class="svc-info">
+          <h3>Nail Trim &amp; Grind</h3>
+          <p>Gentle, low-stress trimming with optional grinding for smooth edges. Great as a standalone or add-on.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$10</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">👂</div>
+        <div class="svc-info">
+          <h3>Ear Cleaning</h3>
+          <p>Vet-approved gentle ear cleaning to remove buildup and reduce infection risk. Pairs with any service.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$12</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">🦷</div>
+        <div class="svc-info">
+          <h3>Teeth Brushing</h3>
+          <p>Pet-safe enzymatic toothpaste to reduce plaque and keep breath fresh between vet dental cleanings.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$8</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">🧴</div>
+        <div class="svc-info">
+          <h3>Anal Gland Expression</h3>
+          <p>External expression to prevent scooting and discomfort. Done gently and professionally.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$15</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">🪮</div>
+        <div class="svc-info">
+          <h3>Brush Out</h3>
+          <p>Full-body detangling and brush-out to keep coats healthy and mat-free between full grooming sessions.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$20</div></div>
+      </div>
+      <div class="svc-row rv">
+        <div class="svc-ico">🐛</div>
+        <div class="svc-info">
+          <h3>Flea Treatment</h3>
+          <p>Medicated flea shampoo bath with thorough rinse and full coat inspection to help eliminate fleas.</p>
+        </div>
+        <div class="svc-price-wrap"><div class="svc-from">Starting from</div><div class="svc-price">$20</div></div>
+      </div>
+    </div>
+
+    <div class="cat-banner rv">
+      <span style="font-size:2.5rem;">🐱</span>
+      <div style="flex:1;">
+        <h4>We Welcome Cats Too!</h4>
+        <p>Nail trims, brush-outs, ear cleaning, and full baths for water-tolerant cats. Our calm environment keeps felines comfortable. Just mention it when you book!</p>
+      </div>
+      <a href="#booking" class="btn-orange" style="flex-shrink:0;white-space:nowrap;">Book for My Cat →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="sec sec-soft" id="pricing">
+  <div class="max">
+    <div class="rv" style="margin-bottom:2.5rem;">
+      <div class="chip chip-blue">Transparent Pricing</div>
+      <h2 class="sec-h">Simple, <em>Honest</em> Rates</h2>
+      <p class="sec-sub">No hidden fees. Price confirmed at drop-off based on coat condition and time needed.</p>
+    </div>
+    <div class="price-layout">
+      <div class="price-card rvl">
+        <div class="price-head">
+          <span>Service</span>
+          <span style="text-align:center;">XS/S<br><small style="font-weight:500;opacity:.8;">0–20 lbs</small></span>
+          <span style="text-align:center;">Med<br><small style="font-weight:500;opacity:.8;">21–50 lbs</small></span>
+          <span style="text-align:center;">Lg<br><small style="font-weight:500;opacity:.8;">51–80 lbs</small></span>
+          <span style="text-align:center;">XL<br><small style="font-weight:500;opacity:.8;">81+ lbs</small></span>
+        </div>
+        <div class="price-row"><span class="pn">Bath &amp; Brush</span><span class="pc">$30–45</span><span class="pc">$45–65</span><span class="pc">$65–85</span><span class="pc">$85–110</span></div>
+        <div class="price-row"><span class="pn">Full Groom</span><span class="pc">$50–70</span><span class="pc">$70–95</span><span class="pc">$95–130</span><span class="pc">$130–180</span></div>
+        <div class="price-row"><span class="pn">Shed Control</span><span class="pc">$15–25</span><span class="pc">$25–40</span><span class="pc">$40–55</span><span class="pc">$55–75</span></div>
+        <div class="price-row"><span class="pn">Flea Treatment</span><span class="pc">$20–30</span><span class="pc">$30–45</span><span class="pc">$45–60</span><span class="pc">$60–80</span></div>
+       <!-- Image below the pricing table -->
+        <img
+  class="price-img"
+  src="images/bandanna2.jpg"
+  alt="Happy groomed dog at Happy Tails Grooming"
+  style="width:100%;height:300px;object-fit:cover;object-position:center;border-radius:18px;margin-top:1.5rem;display:block;box-shadow:0 6px 28px rgba(30,111,163,.12);"
+>
+     
+      </div>
+      <div class="addon-card rvr">
+        <div class="chip chip-orange">Add-On Menu</div>
+        <h3>Customize Your Visit</h3>
+        <p style="font-size:.88rem;color:var(--txt-mid);margin-top:.3rem;">Add any of these to your appointment.</p>
+        <div class="addon-list">
+          <div class="addon-row"><span>💅 Nail Trim</span><span class="addon-price">$10–$20</span></div>
+          <div class="addon-row"><span>🦷 Teeth Brushing</span><span class="addon-price">$8–$15</span></div>
+          <div class="addon-row"><span>👂 Ear Cleaning</span><span class="addon-price">$12–$18</span></div>
+          <div class="addon-row"><span>🧴 Anal Gland Expression</span><span class="addon-price">$15–$25</span></div>
+          <div class="addon-row"><span>🪮 Brush Out</span><span class="addon-price">$20–$35</span></div>
+          <div class="addon-row"><span>✨ Blueberry Facial</span><span class="addon-price">$8–$12</span></div>
+          <div class="addon-row"><span>🌸 Bandana / Bow</span><span class="addon-price">$3–$5</span></div>
+          <div class="addon-row"><span>🐾 Paw Balm Treatment</span><span class="addon-price">$8–$15</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOOKING ══ -->
+<section class="sec sec-blue" id="booking">
+  <div class="max">
+    <div class="rv" style="margin-bottom:2.5rem;">
+      <div class="chip chip-orange">Book an Appointment</div>
+      <h2 class="sec-h">Ready for Your Pet's <em>Spa Day?</em></h2>
+      <p class="sec-sub">Fill out the form and we'll confirm within 24 hours. Quick and easy!</p>
+    </div>
+    <div class="book-layout">
+      <div class="rvl">
+        <div class="book-steps">
+          <div class="bstep"><div class="bstep-num">1</div><div><h4>Choose Your Service</h4><p>Select your service type and any add-ons you'd like included.</p></div></div>
+          <div class="bstep"><div class="bstep-num">2</div><div><h4>Tell Us About Your Pet</h4><p>Breed, size, age — and anything special we should know!</p></div></div>
+          <div class="bstep"><div class="bstep-num">3</div><div><h4>We Confirm by Phone</h4><p>We'll call or text to lock in your preferred time slot within 24 hours.</p></div></div>
+          <div class="bstep"><div class="bstep-num">4</div><div><h4>Pick Up a Happy Pet 🐾</h4><p>We text you a photo when done. Come collect the freshest version of your pet!</p></div></div>
+        </div>
+
+        
+
+      </div>
+      <div class="form-card rvr">
+        <h3>Request an Appointment</h3>
+        <p class="fn">We'll reach out within 24 hours to confirm your slot.</p>
+        <div class="frow">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="Jane Smith" id="f-name"></div>
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="(425) 555-0100" id="f-phone"></div>
+        </div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="jane@email.com" id="f-email"></div>
+        <div class="frow">
+          <div class="fg"><label>Pet Name</label><input type="text" placeholder="Buddy" id="f-pet"></div>
+          <div class="fg"><label>Pet Type</label>
+            <select id="f-type"><option value="" disabled selected>Dog / Cat...</option><option>Dog</option><option>Cat</option><option>Other</option></select>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Breed / Size</label><input type="text" placeholder="e.g. Goldendoodle, Large" id="f-breed"></div>
+          <div class="fg"><label>Preferred Date</label><input type="date" id="f-date"></div>
+        </div>
+        <div class="fg"><label>Service Needed</label>
+          <select id="f-service"><option value="" disabled selected>Choose a service...</option><option>Bath &amp; Brush</option><option>Full Groom</option><option>Nail Trim Only</option><option>Shed Control Treatment</option><option>Teeth Brushing</option><option>Flea Treatment</option><option>Cat Grooming</option><option>Other / Multiple</option></select>
+        </div>
+        <div class="fg"><label>Notes (optional)</label><textarea id="f-notes" placeholder="Special requests, skin issues, behavioral notes..." style="resize:vertical;min-height:72px;"></textarea></div>
+        <button class="form-submit" id="submitBtn">🐾 Request My Appointment</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY US ══ -->
+<section class="sec" id="why">
+  <div class="max why-layout">
+    <div class="why-photo-wrap rvl">
+      <div class="why-photo"></div>
+      <div class="why-float">
+        <div class="wf-stars">★★★★★</div>
+        <h4>Fear Free Certified</h4>
+        <p>All groomers trained in low-stress, anxiety-free handling for every breed and temperament.</p>
+      </div>
+    </div>
+    <div class="rvr">
+      <div class="chip chip-blue">Why Choose Us</div>
+      <h2 class="sec-h">We're Pet Parents <em>Too.</em></h2>
+      <p class="sec-sub">Every decision — from the products we use to how we hold your pet — is driven by their comfort and safety.</p>
+      <div class="why-pts">
+        <div class="wpt"><div class="wpt-ico">🧴</div><div><h4>100% Pet-Safe Products</h4><p>Hypoallergenic, vet-approved shampoos only. Safe for sensitive skin and all coat types. No harsh chemicals, ever.</p></div></div>
+        <div class="wpt"><div class="wpt-ico">📵</div><div><h4>No Unattended Cage Drying</h4><p>Every pet is hand or fluff-dried under direct supervision. Safety is never something we compromise on.</p></div></div>
+        <div class="wpt"><div class="wpt-ico">📸</div><div><h4>Spa Day Photo Update</h4><p>We text you a photo when your pet is freshly done so you see the adorable results before you even arrive!</p></div></div>
+        <div class="wpt"><div class="wpt-ico">💬</div><div><h4>Honest &amp; Upfront Pricing</h4><p>Price confirmed at drop-off. No surprise charges. We'll always call if anything unexpected comes up.</p></div></div>
+      </div>
+      <div class="cert-row">
+        <div class="cert-pill">✅ Fear Free Certified</div>
+        <div class="cert-pill">🧪 IPG Certified Groomer</div>
+        <div class="cert-pill">❤️ Pet CPR Trained</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- ══ GALLERY — single pet photos ══ -->
+<section class="sec sec-soft" id="gallery">
+  <div class="max">
+    <div class="gal-hdr rv">
+      <div>
+        <div class="chip chip-blue">Photo Gallery</div>
+        <h2 class="sec-h">Meet Some of Our <em>Guests</em></h2>
+      </div>
+      <h3 class="sec-h" style="text-align:right;">Our studio and the beautiful pets we're privileged to care for.</h3>
+    </div>
+
+    <div class="gal-grid">
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/sign.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Welcome to Happy Tails 🏠</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/golden.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Fresh &amp; fluffy 🐾</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/groom5.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Looking great ✨</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/groom4.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Spa day done 🌿</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/groom3.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Happy pup 😊</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/groom.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Clean trim 🌸</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/groom2.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Happy Grooming 💅</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/clip.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Nail trim time ✂️</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/wash.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Bath day 🛁</span></div>
+      </div>
+
+       <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/catgroom.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Cat Groom 🐱</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/spa3.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Spa treatment 🌿</span></div>
+      </div>
+
+      <div class="gal-item">
+        <div class="gal-img" style="background-image:url('images/spa4.jpg');height:280px;"></div>
+        <div class="gal-cap"><span>Easy Access 🏠</span></div>
+      </div>
+
+    </div><!-- end gal-grid -->
+
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section class="sec sec-warm" id="reviews">
+  <div class="max">
+    <div class="rev-hdr rv">
+      <div class="chip chip-orange">Happy Clients</div>
+      <h2 class="sec-h">4.9 Stars on Google ⭐</h2>
+      <p class="sec-sub">500+ pets groomed and their owners still talking about it.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card feat rv"><div class="rev-quote">"</div><div class="rev-stars">★★★★★</div><p class="rev-text">I've been bringing Maple here for two years. She actually gets excited when we pull into the parking lot — that says everything. The team is so gentle and patient every single time.</p><div class="rev-foot"><div class="rev-av">SK</div><div><div class="rev-name">Sarah K.</div><div class="rev-pet">🐶 Maple, Golden Retriever</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-quote">"</div><div class="rev-stars">★★★★★</div><p class="rev-text">My husky was a mess after shedding season. The shed control treatment was worth every penny — I couldn't believe how much fur came off. He smelled incredible!</p><div class="rev-foot"><div class="rev-av">TM</div><div><div class="rev-name">Tom M.</div><div class="rev-pet">🐶 Zeus, Husky</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-quote">"</div><div class="rev-stars">★★★★★</div><p class="rev-text">Brought my anxious rescue for the first time. They were so patient — took breaks when needed. She looked beautiful and wasn't stressed at pickup. Absolute 10/10.</p><div class="rev-foot"><div class="rev-av">JL</div><div><div class="rev-name">Jamie L.</div><div class="rev-pet">🐶 Biscuit, Mixed Breed</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-quote">"</div><div class="rev-stars">★★★★★</div><p class="rev-text">They groomed my cat and she didn't try to escape once! That's a first. Nail trim was perfect and the ear cleaning really helped with the scratching she was doing.</p><div class="rev-foot"><div class="rev-av">AC</div><div><div class="rev-name">Amy C.</div><div class="rev-pet">🐱 Princess, Maine Coon</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-quote">"</div><div class="rev-stars">★★★★★</div><p class="rev-text">Been going here for years. They remember my dog's name every time. Fair prices, top-tier quality, and they genuinely care about every animal in their care.</p><div class="rev-foot"><div class="rev-av">RP</div><div><div class="rev-name">Rachel P.</div><div class="rev-pet">🐶 Mango, Goldendoodle</div></div></div></div>
+      <div class="rev-card rv"><div class="rev-quote">"</div><div class="rev-stars">★★★★★</div><p class="rev-text">Easy to book, they texted me a photo when Max was done. He looked like a magazine model. We've already booked our monthly appointments going forward!</p><div class="rev-foot"><div class="rev-av">DW</div><div><div class="rev-name">Derek W.</div><div class="rev-pet">🐶 Max, Border Collie</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKIN HEALTH ══ -->
+<section class="sec" id="skincare">
+  <div class="max skin-layout">
+    <div class="rvl">
+      <div class="chip chip-blue">Skin &amp; Coat Health</div>
+      <h2 class="sec-h">We Help With <em>Skin Issues Too</em></h2>
+      <p class="sec-sub">Itching, dryness, shedding — our specialized treatments address root causes alongside your vet's care plan.</p>
+      <div class="skin-list">
+        <div class="skin-row"><div class="sk-ico">🔴</div><div><h4>Itchy, Irritated Skin</h4><p>Medicated or oatmeal baths soothe inflammation and relieve allergic itching.</p></div></div>
+        <div class="skin-row"><div class="sk-ico">❄️</div><div><h4>Dry Skin &amp; Flaking</h4><p>Deep conditioning restores moisture — especially helpful in Pacific Northwest winters.</p></div></div>
+        <div class="skin-row"><div class="sk-ico">🌀</div><div><h4>Excessive Shedding</h4><p>Deshedding treatment removes loose undercoat and reduces future shedding for weeks.</p></div></div>
+        <div class="skin-row"><div class="sk-ico">🐛</div><div><h4>Fleas &amp; Parasites</h4><p>Medicated flea baths with thorough rinse and complete coat inspection.</p></div></div>
+        <div class="skin-row"><div class="sk-ico">🔒</div><div><h4>Matting &amp; Tangles</h4><p>Gentle de-matting — comfort first. Shave-down only as a last resort with your approval.</p></div></div>
+      </div>
+    </div>
+    <div class="rvr">
+      <div class="oat-card">
+        <span class="oc-ico">🌿</span>
+        <h3>Signature Oatmeal Spa Treatment</h3>
+        <p>Our oatmeal &amp; aloe vera soothing bath is perfect for pets with sensitive skin, allergies, or chronic itching. Naturally calming and 100% pet-safe.</p>
+        <a href="#booking" class="btn-orange">Book Spa Treatment</a>
+      </div>
+      <div class="vet-note"><strong>⚠️ Note:</strong> Grooming complements veterinary care but doesn't replace it. For persistent skin issues, please see your vet first. We're happy to work alongside their treatment plan.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SAFETY ══ -->
+<section class="sec sec-soft" id="safety">
+  <div class="max">
+    <div class="rv" style="text-align:center;">
+      <div class="chip chip-blue">Safety First</div>
+      <h2 class="sec-h">Keeping Your Pet <em>Safe &amp; Comfortable</em></h2>
+    </div>
+    <div class="tips-list">
+      <div class="tip-row rv"><div class="tip-ico">🏥</div><div><h4>Vaccinations Required</h4><p>Dogs need current Rabies and Bordetella vaccines. Please bring proof on your first visit to keep all pets safe and healthy.</p></div></div>
+      <div class="tip-row rv"><div class="tip-ico">💧</div><div><h4>Hydrate Before You Come</h4><p>Make sure your pet has had water. Avoid large meals 1–2 hours before their appointment to prevent any tummy troubles.</p></div></div>
+      <div class="tip-row rv"><div class="tip-ico">🧘</div><div><h4>Fear-Free Handling Always</h4><p>We use low-stress techniques and take breaks when needed. We never rush a pet that's anxious or uncomfortable.</p></div></div>
+      <div class="tip-row rv"><div class="tip-ico">📋</div><div><h4>Tell Us Everything Upfront</h4><p>Health conditions, past grooming trauma, behavioral quirks — share it all. No judgment, just better care for your pet.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec sec-blue" id="faq">
+  <div class="max faq-layout">
+    <div class="rvl">
+      <div class="chip chip-orange">FAQ</div>
+      <h2 class="sec-h">Got Questions? <em>We've Got Answers.</em></h2>
+      <p class="sec-sub">Still unsure? We love chatting with pet parents before they book!</p>
+      <div class="faq-cta-box">
+        <h4>Still Have Questions?</h4>
+        <p>Give us a ring — we're happy to walk you through everything before your first appointment.</p>
+        <a href="tel:4252708480" class="btn-white">📞 Call (425) 270-8480</a>
+      </div>
+    </div>
+    <div class="faq-list rvr">
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">How long does a grooming appointment take? <span class="faq-icon">+</span></button><div class="faq-ans">Times vary by size and service. A small dog bath takes about 1–1.5 hours. A full groom on a large dog may take 2.5–4 hours. We give a more accurate estimate at drop-off.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">Does my dog have to wait in a kennel? <span class="faq-icon">+</span></button><div class="faq-ans">Kennels are only used briefly for rest between service steps. Your pet is never left alone for long. We prefer a calm, flow-based schedule so they spend most of their time being groomed, not waiting.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">Do you do de-matting? <span class="faq-icon">+</span></button><div class="faq-ans">Yes! We offer de-matting as an add-on service. Severe matting may require a shave-down — we always discuss this with you first. We never cause pain to de-mat; your pet's comfort always comes first.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">How much will it cost? <span class="faq-icon">+</span></button><div class="faq-ans">Pricing starts at $30 for small dogs and scales by size. The final price is confirmed at drop-off based on coat condition and time needed. We're always transparent — no surprise charges!</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">Do you groom cats? <span class="faq-icon">+</span></button><div class="faq-ans">Yes! We offer nail trims, brush-outs, ear cleaning, and full baths for cats who tolerate water. We have a calm space for our feline clients. Just mention it's a cat when you book!</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">What vaccines are required? <span class="faq-icon">+</span></button><div class="faq-ans">For dogs, we require current Rabies and Bordetella (kennel cough) vaccinations. Please bring proof on your first visit, or have your vet send records. This protects all pets in our care.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">Can I stay while my pet is groomed? <span class="faq-icon">+</span></button><div class="faq-ans">Pets actually tend to behave better without their owner present — they're calmer and more focused! We'll text a photo when done and call when ready. You're welcome to call and check in anytime.</div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFAQ(this)">What's your cancellation policy? <span class="faq-icon">+</span></button><div class="faq-ans">We ask for 24 hours notice for cancellations. Life happens — just communicate with us and we'll work with you. Repeat no-shows without notice may be subject to a small fee.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="sec" id="about">
+  <div class="max about-layout">
+    <div class="about-photo-wrap rvl">
+      <div class="about-photo"></div>
+      <div class="about-badge">
+        <div class="big">8+</div>
+        <small>Years serving<br>Bothell pets</small>
+      </div>
+    </div>
+    <div class="about-txt rvr">
+      <div class="chip chip-blue">Our Story</div>
+      <h2 class="sec-h">Locally Owned, <em>Pet Obsessed.</em></h2>
+      <p>Happy Tails Grooming was born out of a simple belief: every pet deserves to feel their absolute best. We started right here in Bothell because this community is home — and we pour that love into everything we do.</p>
+      <p>Our certified groomers bring years of experience with all breeds, temperaments, and coat types. Whether it's an anxious rescue or a bouncy puppy, every pet gets the time and attention they deserve.</p>
+      <p>We're not a high-volume factory. We limit daily appointments so every pet gets our full focus. Quality over quantity — always.</p>
+      <div class="vals">
+        <div class="val"><span class="vi">💛</span><h4>Patience First</h4><p>We take our time with every pet, no matter how long it takes.</p></div>
+        <div class="val"><span class="vi">🌱</span><h4>Community Rooted</h4><p>Proud to serve our Bothell neighbors and their families.</p></div>
+        <div class="val"><span class="vi">🔬</span><h4>Always Learning</h4><p>Ongoing education in techniques, products &amp; animal behavior.</p></div>
+        <div class="val"><span class="vi">🤝</span><h4>Always Honest</h4><p>Clear pricing, open communication, zero hidden surprises.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="sec sec-soft" id="contact">
+  <div class="max contact-layout">
+    <div class="rvl">
+      <div class="chip chip-orange">Contact Us</div>
+      <h2 class="sec-h">Come Say Hello <em>(Pet Too!)</em></h2>
+      <p class="sec-sub">We'd love to meet your furry family member. Reach out any way that works for you.</p>
+      <div class="contact-items">
+        <div class="c-item"><div class="c-ico">📞</div><div><h4>Phone</h4><p><a href="tel:4252708480">(425) 270-8480</a> — Call or Text</p></div></div>
+        <div class="c-item"><div class="c-ico">✉️</div><div><h4>Email</h4><p><a href="mailto:ryanwdurham@yahoo.com">ryanwdurham@yahoo.com</a></p></div></div>
+        <div class="c-item"><div class="c-ico">📍</div><div><h4>Address</h4><p>22102 17th Ave SE Suite #200, Bothell, WA 98021<br><small style="color:var(--txt-light);">Free parking · Accessible entrance</small></p></div></div>
+      </div>
+      <div class="hours-grid">
+        <div class="hr-row"><span class="hr-day">Monday</span><span class="hr-time">8am – 6pm</span></div>
+        <div class="hr-row"><span class="hr-day">Tuesday</span><span class="hr-time">8am – 6pm</span></div>
+        <div class="hr-row"><span class="hr-day">Wednesday</span><span class="hr-time">8am – 6pm</span></div>
+        <div class="hr-row"><span class="hr-day">Thursday</span><span class="hr-time">8am – 6pm</span></div>
+        <div class="hr-row"><span class="hr-day">Friday</span><span class="hr-time">8am – 6pm</span></div>
+        <div class="hr-row"><span class="hr-day">Saturday</span><span class="hr-time">8am – 5pm</span></div>
+        <div class="hr-row"><span class="hr-day">Sunday</span><span class="hr-time">9am – 4pm</span></div>
+      </div>
+    </div>
+    <div class="rvr">
+      <div class="map-box"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1895.1451170201374!2d-122.21139144570871!3d47.79812323795186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900ff7bb7d71d3%3A0x529f56a19241a2a9!2sRejuvenationMD%C2%AE!5e0!3m2!1sen!2sus!4v1777747786372!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map-addr">22102 17th Ave SE Suite #200, Bothell, WA 98021</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="foot-brand-name">Happy Tails Grooming Pet Spa</div>
+        <div class="foot-brand-sub">Bothell's Friendliest Pet Spa</div>
+        <p>Premium, stress-free grooming for dogs &amp; cats in Bothell, WA. Happy tails are our biggest reward.</p>
+        <div class="foot-soc">
+          <div class="soc-btn">📘</div>
+          <div class="soc-btn">📸</div>
+          <div class="soc-btn">⭐</div>
+        </div>
+      </div>
+      <div class="foot-col"><h4>Services</h4><ul><li><a href="#services">Full-Service Bath</a></li><li><a href="#services">Full Groom</a></li><li><a href="#services">Nail Trim</a></li><li><a href="#services">Shed Control</a></li><li><a href="#services">Ear Cleaning</a></li><li><a href="#services">Cat Grooming</a></li><li><a href="#services">Flea Treatment</a></li></ul></div>
+      <div class="foot-col"><h4>Quick Links</h4><ul><li><a href="#about">About Us</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#faq">FAQ</a></li><li><a href="#safety">Safety Info</a></li><li><a href="#booking">Book Now</a></li></ul></div>
+      <div class="foot-col"><h4>Contact</h4><ul><li><a href="tel:4252708480">(425) 270-8480</a></li><li><a href="mailto:ryanwdurham@yahoo.com">ryanwdurham@yahoo.com</a></li><li><a href="#contact">1428 Evergreen Way<br>Bothell, WA 98021</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2025 <span>Happy Tails Grooming</span>. All rights reserved. Made with ❤️ in Bothell, WA.</p>
+      <p>Privacy Policy · Terms of Service</p>
+    </div>
+  </div>
+</footer>
+
+<!-- SUCCESS MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <span class="modal-ico">🐾</span>
+    <h3>You're All Set!</h3>
+    <p>We've received your request and will call or text within 24 hours to confirm. We can't wait to meet your pet!</p>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+// FAQ accordion
+function toggleFAQ(btn) {
+  const ans = btn.nextElementSibling;
+  const item = btn.parentElement;
+  const open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-ans').classList.remove('open'); });
+  if (!open) { item.classList.add('open'); ans.classList.add('open'); }
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }), { threshold: .07 });
+document.querySelectorAll('.rv, .rvl, .rvr').forEach(el => obs.observe(el));
+
+// Stagger service rows
+document.querySelectorAll('.svc-row').forEach((el, i) => { el.style.transitionDelay = (i * .05) + 's'; });
+
+// Booking form
+document.getElementById('submitBtn').addEventListener('click', () => {
+  const n  = document.getElementById('f-name').value.trim();
+  const ph = document.getElementById('f-phone').value.trim();
+  const p  = document.getElementById('f-pet').value.trim();
+  if (!n || !ph || !p) { alert('Please fill in your name, phone number, and pet name to continue.'); return; }
+  document.getElementById('modal').classList.add('show');
+});
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  ['f-name','f-phone','f-email','f-pet','f-breed','f-notes'].forEach(id => document.getElementById(id).value = '');
+  ['f-type','f-service'].forEach(id => document.getElementById(id).selectedIndex = 0);
+}
+
+// Mobile menu — close on any link click
+function closeMobNav() { document.getElementById('mobNav').classList.remove('open'); }
+document.getElementById('hamBtn').addEventListener('click', () => document.getElementById('mobNav').classList.add('open'));
+document.getElementById('mobClose').addEventListener('click', closeMobNav);
+document.querySelectorAll('.ml').forEach(l => l.addEventListener('click', closeMobNav));
+
+// Mobile Book Appointment button — close menu then scroll to booking
+document.getElementById('mobBookBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  closeMobNav();
+  setTimeout(() => {
+    const target = document.getElementById('booking');
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  }, 350); // wait for menu fade-out before scrolling
+});
+
+// Nav shadow on scroll
+window.addEventListener('scroll', () => document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 40));
+</script>
+</body>
+</html>
